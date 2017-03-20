@@ -1,0 +1,22 @@
+/* exercise 1 */
+
+p {
+    font-size: 18px;
+    border: 2px solid black;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 300px;
+    padding: 20px;
+}
+
+p {
+    border-top: 0px;
+}
+
+div > p:last-child{
+    border-bottom: 0px;
+}
+
+p:hover {
+    background-color: #EC6842;
+}

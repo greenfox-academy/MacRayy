@@ -1,0 +1,34 @@
+/* exercise 2 */
+
+p {
+    font-size: 16px;
+    font-family: courier;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    background-image: url(img/duck.png);
+}
+
+p:first-child {
+    background-color: #FF4C2B;
+    color: white;
+    background-size: 55px;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+p:nth-child(2) {
+    background-color: purple;
+    color: white;
+    background-size: 170px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+p:last-child {
+    background-color: gray;
+    color: white;
+    background-size: 55px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
