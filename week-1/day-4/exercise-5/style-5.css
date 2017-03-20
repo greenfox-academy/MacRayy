@@ -1,0 +1,25 @@
+/* exercise 5 */
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: orange;
+}
+
+li.food-type {
+    color: blue;
+}
+
+ul .apple {
+    color: red;
+}
+
+ul {
+    list-style: square;
+}
+
+ul ul li {
+    list-style: disc;
+}

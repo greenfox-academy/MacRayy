@@ -1,0 +1,12 @@
+/* exercise 6 */
+
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 18px;
+    width: 400px;
+    padding-left: 20px;
+    border-left: 2px solid black;
+}

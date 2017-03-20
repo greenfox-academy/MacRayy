@@ -1,0 +1,32 @@
+/* exercise 2 */
+
+p {
+    font-size: 36px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    padding: 44px;
+}
+
+.box {
+    border: 15px solid #4179F8;
+    width: 355px;
+}
+
+#north {
+    background-color: #F8696E;
+}
+
+#east {
+    background-color: #EDF758;
+}
+
+#south {
+    background-color: #95E9E8;
+}
+
+#west {
+    background-color: #778AE7;
+}

@@ -1,0 +1,21 @@
+/* exercise 7 */
+
+div {
+    font-weight: bold;
+}
+
+.asteroid {
+    width: 300px;
+}
+
+div .asteroid {
+    border: 1px solid green;
+}
+
+p.asteroid {
+    background-color: yellow;
+}
+
+.big {
+    color: blue;
+}
