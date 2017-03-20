@@ -1,2 +1,2 @@
 # MacRayy
-Bajusz - greenfox
+Bajusz - greenfox exercises
