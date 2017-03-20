@@ -1,0 +1,131 @@
+/* vader cv */
+
+/* header start */
+h1, q {
+    font-family: 'Abril Fatface', serif, cursive;
+    font-weight: lighter;
+}
+
+h1{
+    color: #222;
+    font-size: 35px;
+    line-height: 50px;
+    padding-top: 250px;
+    width: 650px;
+    margin: auto;
+}
+
+span {
+    font-size:70px;
+    display: block;
+}
+
+header{
+    background-image: url(img/anakin.png);
+    background-size: cover;
+    max-width: 100%;
+    height: 400px;
+    margin: 0px;
+}
+/* header end */
+
+/* general */
+h2, dl, h3, ul, section p:first-child  {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #222;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+section p:first-child {
+    font-size: 20px;
+    line-height:28px;
+    padding-top: 40px;
+    font-weight: lighter;
+}
+
+section p:not(:first-child) {
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-size: 15px;
+}
+
+/* page width */
+section, q, hr {
+    width: 650px;
+    margin: 60px auto;
+}
+
+/* qote */
+q {
+    font-size: 42px;
+    color: white;
+    background-color: #444444;
+    display: block;
+    padding: 50px 40px;
+}
+
+q:before {
+    content: "“";
+    font-size: 135px;
+    line-height: 20px;
+    vertical-align: -15px;
+    margin-left: -40px;
+}
+
+q:after {
+    content: none;
+}
+
+/* intro ul */
+.intro ul:first-of-type {
+    list-style: square;
+    font-size: 20px;
+    line-height:28px;
+    padding-left: 50px;
+    font-weight: lighter;
+}
+
+/* achivements */
+dt {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.5em;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+dd {
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-left: 0px;
+}
+
+/* exp, training and interests */
+h3 {
+    font-size: 22px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+ul {
+    line-height: 25px;
+    list-style: square;
+}
+
+/* line */
+hr {
+    color: black;
+    background-color: black;
+    height: 3px;
+}

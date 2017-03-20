@@ -1,0 +1,38 @@
+/* quote test */
+
+q {
+    font-size: 22px;
+    display: block;
+    padding: 30px 30px;
+}
+
+q:before {
+    content: open-quote;
+    font-size: 50px;
+    line-height: 20px;
+    vertical-align: -15px;
+    margin-left: -40px;
+}
+
+q:after {
+    content: close-quote;
+    visibility: hidden;
+}
+
+blockquote {
+    font-size: 22px;
+    display: block;
+    padding: 30px 30px;
+}
+
+blockquote:before {
+    content: open-quote;
+    font-size: 50px;
+    line-height: 20px;
+    vertical-align: -15px;
+    margin-left: -40px;
+}
+
+blockquote:after {
+    content: none;
+}
