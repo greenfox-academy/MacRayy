@@ -12,4 +12,6 @@ print(workingdayspersemester * 6)
 
 print((17 * 5) * 6)
 
-print(510 / 52)
+x = 17 * 5 * 6
+
+print(x / 52)
