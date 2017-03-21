@@ -10,6 +10,9 @@
 workingdayspersemester = 17 * 5
 print(workingdayspersemester * 6)
 
+workingdayspersemester *= 6
+print(workingdayspersemester)
+
 print((17 * 5) * 6)
 
 x = 17 * 5 * 6
