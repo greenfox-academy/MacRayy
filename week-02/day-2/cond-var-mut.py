@@ -59,3 +59,6 @@ else:
     out3 = "Run Forest Run!"
 
 print(out3)
+
+a = 5 + 5
+print (a)
