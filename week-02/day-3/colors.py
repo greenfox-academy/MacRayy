@@ -7,8 +7,6 @@
 # - In `colors[2]` store the shades of pink:
 #   `"orchid", "violet", "pink", "hot pink"`
 
-colors = ["green", "red", "pink"]
+colors = [["lime", "forest green", "olive", "pale green", "spring green"], ["orange red", "red", "tomato"], ["orchid", "violet", "pink", "hot pink"]]
 
-color[0] = ["lime", "forest green", "olive", "pale green", "spring green"]
-color[1] = ["orange red", "red", "tomato"]
-color[2] = ["orchid", "violet", "pink", "hot pink"]
+print(colors[1])

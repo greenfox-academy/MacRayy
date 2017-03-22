@@ -7,3 +7,11 @@ nimals = ["kuty", "macsk", "cic"]
 for x in nimals:
     x = x + "a"
     print(x)
+
+# valos feladat ez lett volna
+
+nimals = ["kuty", "macsk", "cic"]
+
+for x in range(len(nimals)):
+    nimals[x] += "a"
+print(nimals)
