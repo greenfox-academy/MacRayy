@@ -8,6 +8,9 @@
 #
 # The triangle should have as many lines as the number was
 
-number = "four" #int(input("enter a number: "))
+number = 5 #int(input("enter a number: "))
 
-print(len(number))
+x = 1
+while (x <= number):
+    print("*" * x)
+    x = x + 1
