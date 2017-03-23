@@ -19,8 +19,8 @@ print(output) # it prints: ['og go', ' dad ', 'd d', 'dood', 'eve']
 
 word = "pear"
 
-def palindrome():
+def palindrome(word):
     dorw = word[::-1]
     print(word + dorw)
 
-palindrome()
+palindrome(word)
