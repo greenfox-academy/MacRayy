@@ -19,10 +19,11 @@ def compare_length_words():
             sys.exit()
 
 def anagram():
-    n = len(input_1)
-    print(n)
-
-compare_length_words()
-anagram()
+    if "".join(sorted(input_1)) == "".join(sorted(input_2)):
+        print("True")
+    else:
+        print("False")
 
 # Display true or false
+compare_length_words()
+anagram()
