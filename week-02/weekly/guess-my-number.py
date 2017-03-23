@@ -13,10 +13,16 @@ print("Well, " + user + " let's play! \n But first please tell me the range wher
 
 range_start = float(input("From: "))
 range_end = float(input("To: "))
-while range_start <= range_end:
-    print("Pick a bigger number!")
-    range_end = float(input("To: "))
-    if range_start >= range_end:
+
+while True:
+    if range_start > range_end:
+        print("Pick a bigger number!")
+        range_end = float(input("To: "))
+        continue
+    elif range_start == range_end:
+        print("It is going to be easy!")
+        break
+    elif range_start < range_end:
         break
 
 random_num = (randint(range_start, range_end))
