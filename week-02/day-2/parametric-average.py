@@ -10,7 +10,11 @@
 while True:
     try:
         how_many_numbers = int(input("How many numbers shall I callculate with? "))
-        break
+        if how_many_numbers != 0:
+            break
+        else:
+            print("I cannot divide with zero.")
+            continue
     except ValueError:
         print("Sorry, I didn't understand that. Please, enter a number.")
 
