@@ -2,15 +2,16 @@
 # Insert it into the correct position
 
 planet_list = ["Mercury","Venus","Earth","Mars","Jupiter","Uranus","Neptune"]
-
+"""
 # one solution
 planet_list.insert(5, "Saturn")
 
 print(planet_list)
-
+"""
 # another solution
 new_planet_list = planet_list[:5]
 new_planet_list.append("Saturn")
-new_planet_list.extend(planet_list[6:])
+#new_planet_list.extend(planet_list[7:])
+planet_list = new_planet_list.extend(planet_list[7:])
 
-print(new_planet_list)
+print(planet_list)
