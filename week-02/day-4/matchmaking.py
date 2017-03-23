@@ -3,6 +3,13 @@
 
 girls = ["Eve","Ashley","Bozsi","Kat","Jane"]
 boys = ["Joe","Fred","Bela","Todd","Neef","Jeff"]
-order = [girls[0] + ", " + boys[0] + ", " + girls[1] + ", " + boys[1] + ", " + girls[2] + ", " + boys[2]]
+
+order = []
+n = len(girls)
+for i in range (n):
+    order += [girls[i]]
+    order += [boys[i]]
+
+order.append(boys[5])
 
 print(order)
