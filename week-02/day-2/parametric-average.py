@@ -23,7 +23,8 @@ def sum_and_ave():
     for x in range(how_many_numbers):
         user_number = user_number + float(input("Enter a number: "))
     Average = user_number / how_many_numbers
-    print("Sum of the entered numbers: " + str(user_number))
-    print("Average of the entered numbers: " + str(Average))
+
+print("Sum of the entered numbers: " + str(user_number))
+print("Average of the entered numbers: " + str(Average))
 
 sum_and_ave()
