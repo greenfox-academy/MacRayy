@@ -26,3 +26,14 @@ def candie_counter(candie):
     return total_candies
 
 print(candie_counter(students))
+
+def age_counter(age):
+    sum_age = 0
+    for student in students:
+        if student['candies'] < 5:
+            sum_age += student['age']
+        else:
+            continue
+    return sum_age
+
+print(age_counter(students))
