@@ -5,24 +5,10 @@
 
 Sum: 22, Average: 4.4
 """
+
 # UI
 import os
 os.system("cls" if os.name == "nt" else "clear")
-
-# Loop that ask for the how many numbers needs to be calculated
-'''
-while True:
-    try:
-
-
-            break
-        else:
-            print("I cannot divide with zero.")
-            continue
-    except ValueError:
-        print("Sorry, I didn't understand that. Please, enter a number.")
-'''
-
 
 # Sum and average function
 def average_the_numbers(user_number, how_many_numbers):
@@ -38,5 +24,6 @@ def sum_the_numbers():
         user_number = user_number + float(input("Enter a number: "))
     average = average_the_numbers(user_number, how_many_numbers)
     return user_number, average
+
 
 print(sum_the_numbers())
