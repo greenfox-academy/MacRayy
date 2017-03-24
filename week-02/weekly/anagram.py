@@ -2,28 +2,24 @@
 
 # Create a function named is anagram following your current language's style guide. It should take two strings and return a boolean value depending on whether its an anagram or not.
 
-import sys
-
 # Input UI
 
-input_1 = "dog" #input("word")
-input_2 = "god" #input("word")
+input_1 = "god"#input("word ")
+input_2 = "god"#input("word ")
 
 # Function that compares the input words
-def compare_length_words():
-    while True:
-        if len(input_1) == len(input_2):
-            break
-        else:
-            print("False")
-            sys.exit()
 
-def anagram():
-    if "".join(sorted(input_1)) == "".join(sorted(input_2)):
-        print("True")
+def anagram(input_1, input_2):
+    if len(input_1) != len(input_2):
+        return False
     else:
-        print("False")
+        word = ""
+        for letter in input_1:
+            if letter in input_2:
+                word += letter
+            elif letter not in input_2:
+                return False
+        return True
 
 # Display true or false
-compare_length_words()
-anagram()
+print(anagram(input_1, input_2))
