@@ -24,5 +24,14 @@ ingredients = [
 ]
 #def in_stock(item):
 
+def cooling(cool_or_warm):
+    for cool_or_warm in ingredients[:5]:
+        if cool_or_warm['needs_cooling'] is True:
+            print('Yes')
+        else:
+            print('No')
+
+cooling(ingredients)
+
 for key, value in ingredients:
-    print()
+    print((key + ": " + str(value)))
