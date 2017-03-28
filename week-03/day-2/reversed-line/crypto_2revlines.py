@@ -21,7 +21,7 @@ def decrypt(file_name):
     text = ""
     for line in f:
         text += line.rstrip()[::-1] + '\n'
-    print(text)
     f.close()
+    return text
 
-decrypt("reversed-lines.txt")
+print(decrypt("reversed-lines.txt"))
