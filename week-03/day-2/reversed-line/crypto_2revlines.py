@@ -2,9 +2,10 @@
 
 def decrypt(file_name):
     f = open(file_name, "r")
-    text = f.read()
+    text = f.readlines()
     readalble_text = ""
-    readalble_text = text[::-1]
+    for i in text:
+        readalble_text += i[::-1]
     print(readalble_text)
     f.close()
 
