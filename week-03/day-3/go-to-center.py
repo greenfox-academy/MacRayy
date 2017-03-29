@@ -13,8 +13,8 @@ canvas.pack()
 def draw_lines(x, y):
     line_1 = canvas.create_line(x,y, 150,150)
 
-draw_lines(10,10)
-draw_lines(290,290)
+draw_lines(int(input("Enter starting x coordinate:\n")),int(input("Enter starting y coordinate:\n")))
+draw_lines(150,290)
 draw_lines(290,10)
 
 root.mainloop()
