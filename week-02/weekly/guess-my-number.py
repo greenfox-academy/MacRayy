@@ -30,21 +30,26 @@ while True:
         elif range_start < range_end:
             break
     except ValueError:
-        print("It is not a number, please pick another!")
+        print("It is not a number, please pick a number!")
 
 
 # Game function
 random_num = (randint(range_start, range_end))
 def guess_the_number(random_num):
-    number = int(input("Can you guess my number? "))
-    while number != random_num:
-        if number > random_num:
-            print("No, my number is smaller")
-            number = int(input("Guess again! "))
-        elif number < random_num:
-            print("No, my number is bigger")
-            number = int(input("Guess again! "))
-    if number == random_num:
-        print("Well done, you gessed it right!")
+    while True:
+        try:
+            number = int(input("Can you guess my number? "))
+            while number != random_num:
+                if number > random_num:
+                    print("No, my number is smaller")
+                    number = int(input("Guess again! "))
+                elif number < random_num:
+                    print("No, my number is bigger")
+                    number = int(input("Guess again! "))
+            if number == random_num:
+                print("Well done, you gessed it right!")
+                return
+        except ValueError:
+            print("It is not a number!")
 
 guess_the_number(random_num)
