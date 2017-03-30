@@ -13,20 +13,25 @@ user = input("Hello, what is your name? ")
 
 print("Well, " + user + " let's play! \n But first please tell me the range where I can pick my number. ")
 
-range_start = float(input("From: "))
-range_end = float(input("To: "))
+
 
 # Loop that checks the input numbers
 while True:
-    if range_start > range_end:
-        print("Pick a bigger number!")
+    try:
+        range_start = float(input("From: "))
         range_end = float(input("To: "))
-        continue
-    elif range_start == range_end:
-        print("It is going to be easy!")
-        break
-    elif range_start < range_end:
-        break
+        if range_start > range_end:
+            print("Pick a bigger number!")
+            range_end = float(input("To: "))
+            continue
+        elif range_start == range_end:
+            print("It is going to be easy!")
+            break
+        elif range_start < range_end:
+            break
+    except ValueError:
+        print("It is not a number, please pick another!")
+
 
 # Game function
 random_num = (randint(range_start, range_end))
@@ -40,6 +45,6 @@ def guess_the_number(random_num):
             print("No, my number is bigger")
             number = int(input("Guess again! "))
     if number == random_num:
-        print("Well done, you gessed it right! Now let me be.")
+        print("Well done, you gessed it right!")
 
 guess_the_number(random_num)
