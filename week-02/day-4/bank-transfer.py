@@ -7,9 +7,6 @@
 #  - balance
 #
 # Print "404 - account not found" if any of the account numbers don't exist
-
-input_account_num = 11234543 #int(input('Enter account number:'))
-
 accounts = [
 	{'client_name': 'Igor', 'account_number': 11234543, 'balance': 203004099.2},
 	{'client_name': 'Vladimir', 'account_number': 43546731, 'balance': 5204100071.23},
@@ -19,11 +16,11 @@ accounts = [
 def search(input_account_num):
     for an in accounts:
         if an['account_number'] == input_account_num:
-            print(True)
+            return print(True)
         else:
-            print('404 - account not found')
+            return print('404 - account not found')
 
-search(input_account_num)
+search(input_account_num = 11234543)
 
 
 """
