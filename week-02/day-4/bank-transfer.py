@@ -23,10 +23,9 @@ def search(input_account_num):
 search(input_account_num = 11234543)
 
 
-"""
+
 def output_name_and_balance(*args):
     for client in accounts:
         print(client['client_name'], "has the balance:", client['balance'])
 
 output_name_and_balance(accounts)
-"""
