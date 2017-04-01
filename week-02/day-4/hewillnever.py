@@ -16,10 +16,12 @@ hashmap = [
     {3: "say goodbye"}
 ]
 
+
 for i in not_so_cryptic_message:
     for a in hashmap:
         for k, v in a.items():
             if k == i:
                 out += v
 
-print(out)
+
+#print(out)
