@@ -37,3 +37,17 @@ for key in hashmap.items():
 print("-----------------------")
 for key, value in hashmap.items():
     print(key, value)
+
+n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
+# Add your function here
+
+def flatten(lists):
+    result = []
+    for numbers in lists:
+        for number in numbers:
+            result.appned(number)
+    return result
+
+
+
+print flatten(n)
