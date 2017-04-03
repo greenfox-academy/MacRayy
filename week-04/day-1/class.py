@@ -13,11 +13,12 @@ class Texts():
     print(self.status)
 
   def check_text(self):
-    print(self.texts)
-    
+    print("hello")
+
+
 my_texts = Texts()      # instantiate my own texts
 my_texts.check_state()  # check its state
-
+"""
 my_texts.add_new_text('alma')   # add some new text
 my_texts.check_state()          # then check the class's state
 my_texts.check_text()           # and its content
@@ -25,3 +26,4 @@ my_texts.check_text()           # and its content
 my_texts.add_new_text('korte')  # and another one
 my_texts.check_state()
 my_texts.check_text()
+"""
