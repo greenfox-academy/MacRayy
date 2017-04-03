@@ -12,25 +12,22 @@ answer()
 class Studnet(object):
 
     def learn(self):
-        pass
+        print("learnlearnlearn")
 
     def question(self, teacher): #calls the answer method
         teacher.answer()
 
 class Teacher(object):
-    def __init__(self, hair):
-        self.hair = hair
 
     def teach(self, student): #calls the learn method
-        pass
+        student.learn()
 
     def answer(self):
         print("answer")
-        print(self.hair)
 
 Sanyi = Studnet()
-Belaba = Teacher("black")
-Gabor = Teacher("brown")
+Belaba = Teacher()
 
 Sanyi.question(Belaba)
-Sanyi.question(Gabor)
+
+Belaba.teach(Sanyi)
