@@ -15,11 +15,11 @@ remove = Thing("Remove the obstacles")
 fleet.add(remove)
 
 stand = Thing("Stand up")
-stand.completed = True
+stand.complete()
 fleet.add(stand)
 
 eat = Thing("Eat lunch")
-eat.completed = True
+eat.complete()
 fleet.add(eat)
 
 print(fleet)
