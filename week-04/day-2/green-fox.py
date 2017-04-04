@@ -27,7 +27,18 @@ class Student(Person):
         self.skipped_days += number_of_days
         return self.skipped_days
 
-person_1 = Student("Jane Doe", 30, "female", "The School of Life", 0)
+class Mentor(Person):
+    def __init__(self, name, age, gender, level = "junior"):
+        super().__init__(name, age, gender,)
+        self.level = level
 
-person_1.skip_days(10)
+    def get_goal(self):
+        return "Educate brilliant junior software developers."
+
+    def introduce(self):
+        return "Hi, I'm " +  self.name + ", a " + str(self.age) + " year old " + self.gender + " " + self.level + " mentor."
+
+
+person_1 = Mentor("Jane Doe", 30, "female", "intermediate")
+
 print(person_1.introduce())
