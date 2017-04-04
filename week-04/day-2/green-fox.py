@@ -12,7 +12,7 @@ class Person(object):
 
 class Student(Person):
     def __init__(self, name, age, gender, previous_organization, skipped_days = 0):
-        super().__init__(name, age, gender,)
+        super().__init__(name, age, gender)
         self.previous_organization = previous_organization
         self.skipped_days = skipped_days
 
@@ -29,7 +29,7 @@ class Student(Person):
 
 class Mentor(Person):
     def __init__(self, name, age, gender, level = "junior"):
-        super().__init__(name, age, gender,)
+        super().__init__(name, age, gender)
         self.level = level
 
     def get_goal(self):
@@ -38,7 +38,23 @@ class Mentor(Person):
     def introduce(self):
         return "Hi, I'm " +  self.name + ", a " + str(self.age) + " year old " + self.gender + " " + self.level + " mentor."
 
+class Sponsor(Person):
+    def __init__(self, name, age, gender, company, hired_students = 0):
+        super().__init__(name, age, gender)
+        self.company = company
+        self.hired_students = hired_students
 
-person_1 = Mentor("Jane Doe", 30, "female", "intermediate")
+    def get_goal(self):
+        return "Hire brilliant junior software developers."
 
+    def introduce(self):
+        return "Hi, I'm " +  self.name + ", a " + str(self.age) + " year old " + self.gender + " who represents " + self.company + " and hired " + str(self.hired_students) + " students so far."
+
+    def hire(self):
+        self.hired_students += 1
+        return self.hired_students
+
+person_1 = Sponsor("Jane Doe", 30, "female", "Google", 0)
+
+person_1.hire()
 print(person_1.introduce())
