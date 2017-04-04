@@ -1,27 +1,33 @@
 # GARDEN APP
 
 class Garden():
-    def __init__(self, name = "unknown color", water_level = 0):
-        self.name = name
+    def __init__(self, water_level = 0):
         self.water_level = water_level
 
     def watering(self, water):
-        self.water = self.water/(len(dry_flower) + len(dry_tree))
-        return self.wate
+        self.water = water
+        self.water = water/(len(dry_flower) + len(dry_tree))
+        return self.water
+
+#Plant Parent class
+class Plants():
+    def __init__(self, name = "colored plant", water_level = 0):
+        self.name = name
+        self.water_level = water_level
 
 #Flower class
-class Flower(Garden):
+class Flower(Plants):
 
-    def check_water_level(self):
+    def list_dry_flowres(self):
         dry_flower = []
         if self.water_level < 5:
             dry_flower.append(self.name)
         return dry_flower
 
 #Tree class
-class Tree(Garden):
+class Tree(Plants):
 
-    def check_water_level(self):
+    def list_dry_trees(self):
         dry_tree = []
         if self.water_level < 10:
             dry_tree.append(self.name)
