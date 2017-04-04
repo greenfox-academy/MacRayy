@@ -24,8 +24,8 @@ class Tree(Garden):
     def check_water_level(self):
         dry_tree = []
         if self.water_level < 10:
-            dry_flower.append(self.name)
-        return dry_flower
+            dry_tree.append(self.name)
+        return dry_tree
 
 yellow_flower = Flower("yellow Flower", 0)
 blue_flower = Flower("blue Flower", 0)
