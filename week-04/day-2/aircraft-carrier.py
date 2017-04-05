@@ -8,7 +8,7 @@ class Aircraft():
         self.max_ammo = max_amm
         self.base_damage = base_damage
 
-    def flight(self):
+    def fight(self):
         dmg = self.base_damage
         self.ammo = 0
         return dmg
@@ -26,3 +26,17 @@ class F16(Aircraft):
         self.base_damage = 50
 
 #F35 class(Aircraft)
+
+#Carrier class
+class Carrier():
+    def __init__(self, ammostore, healthpoint):
+        self.aircrafts = []
+        self.ammostore = ammostore
+        self.healthpoint = healthpoint
+
+    def fight(self):
+        #for ciklus az aircraft listan, meghivja az aircraft figth methodjat
+        all_dmg = 0
+        for aircraft in self.aircraft:
+            all_dmg += aircraft.fight()
+            return all_dmg

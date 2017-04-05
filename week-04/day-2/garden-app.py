@@ -13,6 +13,9 @@ class Plants():
         self.name = name
         self.water_level = water_level
 
+    def get_water(self, water):
+        pass
+
 #Flower class
 class Flower(Plants):
 
@@ -20,10 +23,12 @@ class Flower(Plants):
         dry_flower = []
         if self.water_level < 5:
             dry_flower.append(self.name)
-            print("Needs watering: " + str(dry_flower))
-        else:
-            print("Don't need watering: " + str(dry_flower))
-        return dry_flower
+            #print("Needs watering: " + str(dry_flower))
+        #else:
+            #print("Don't need watering: " + str(dry_flower))
+        print(dry_flower)
+        #return dry_flower
+
 
 #Tree class
 class Tree(Plants):
@@ -42,16 +47,14 @@ garden = Garden()
 plants = []
 yellow_flower = Flower("yellow Flower", 0)
 plants.append(yellow_flower)
-blue_flower = Flower("blue Flower", 0)
+blue_flower = Flower("blue Flower", 50)
 plants.append(blue_flower)
 purple_tree = Tree("purple Tree", 0)
 plants.append(purple_tree)
 orange_tree = Tree("orange Tree", 0)
 plants.append(orange_tree)
 
-
 yellow_flower.list_dry_plants()
 blue_flower.list_dry_plants()
-
-
-#garden.watering(40, list_dry_trees(), list_dry_flowres())
+#purple_tree.list_dry_plants()
+#orange_tree.list_dry_plants()
