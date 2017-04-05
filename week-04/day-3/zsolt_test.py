@@ -13,11 +13,15 @@ class TestSumList(unittest.TestCase):
 
     def test_sum_empty_list(self):
         list_1 = SumList([])
-        self.assertEqual(list_1.sum_list_elements(), [])
+        self.assertEqual(list_1.sum_list_elements(), 0)
 
     def test_sum_with_one_number(self):
         list_1 = SumList([55])
         self.assertEqual(list_1.sum_list_elements(), 55)
+
+    def test_sum_with_zero(self):
+        list_1 = SumList([0])
+        self.assertEqual(list_1.sum_list_elements(), 0)
 
 if __name__ == '__main__':
     unittest.main()
