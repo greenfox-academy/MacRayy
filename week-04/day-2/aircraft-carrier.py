@@ -34,9 +34,12 @@ class Carrier():
         self.ammostore = ammostore
         self.healthpoint = healthpoint
 
+    #addolni kell a listaba a repuloket
+
     def fight(self):
         #for ciklus az aircraft listan, meghivja az aircraft figth methodjat
         all_dmg = 0
         for aircraft in self.aircraft:
             all_dmg += aircraft.fight()
             return all_dmg
+        #ha 0 repulo megy el akkor 0 eredmennyel jojjon vissza
