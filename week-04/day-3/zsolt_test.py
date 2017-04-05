@@ -28,5 +28,10 @@ class TestAnagram(unittest.TestCase):
         strings = Anagaram("dog", "god")
         self.assertEqual(strings.anagaram(), True)
 
+class TestCountLetter(unittest.TestCase):
+    def test_count_letter(self):
+        word = CountLetter("terrier")
+        self.assertEqual(word.count_letter(), {"t": 1, "e": 2, "r": 3, "i": 1})
+
 if __name__ == '__main__':
     unittest.main()

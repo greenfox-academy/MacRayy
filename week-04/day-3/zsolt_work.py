@@ -25,3 +25,16 @@ class Anagaram():
             return True
         else:
             return False
+
+class CountLetter():
+    def __init__(self, string):
+        self.word = string
+
+    def count_letter(self):
+        dic = {}
+        for letter in self.word:
+            if letter not in dic:
+                dic[letter] = 1
+            else:
+                dic[letter] += 1
+        return dic
