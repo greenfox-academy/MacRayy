@@ -10,4 +10,7 @@ class SumList():
         summ = 0
         for element in self.list:
             summ += element
-        return summ
+        if summ == 0:
+            return []
+        else:
+            return summ

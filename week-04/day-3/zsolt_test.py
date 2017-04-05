@@ -12,7 +12,8 @@ class TestSumList(unittest.TestCase):
         self.assertEqual(list_1.sum_list_elements(), 6)
 
     def test_sum_empty_list(self):
-        
+        list_1 = SumList([])
+        self.assertEqual(list_1.sum_list_elements(), [])
 
 if __name__ == '__main__':
     unittest.main()
