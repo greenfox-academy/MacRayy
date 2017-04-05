@@ -14,3 +14,14 @@ class SumList():
             return 0
         else:
             return summ
+
+class Anagaram():
+    def __init__(self, word_1, word_2):
+        self.word_1 = word_1
+        self.word_2 = word_2
+
+    def anagaram(self):
+        if "".join(sorted(self.word_1)) == "".join(sorted(self.word_2)):
+            return True
+        else:
+            return False

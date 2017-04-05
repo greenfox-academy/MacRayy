@@ -23,5 +23,10 @@ class TestSumList(unittest.TestCase):
         list_1 = SumList([0])
         self.assertEqual(list_1.sum_list_elements(), 0)
 
+class TestAnagram(unittest.TestCase):
+    def test_anagram(self):
+        strings = Anagaram("dog", "god")
+        self.assertEqual(strings.anagaram(), True)
+
 if __name__ == '__main__':
     unittest.main()
