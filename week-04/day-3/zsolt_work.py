@@ -3,8 +3,8 @@ class Apple():
         return "Apple"
 
 class SumList():
-    def __init__(self):
-        self.list = [1, 2, 3]
+    def __init__(self, listt = []):
+        self.list = listt
 
     def sum_list_elements(self):
         summ = 0
