@@ -15,5 +15,9 @@ class TestSumList(unittest.TestCase):
         list_1 = SumList([])
         self.assertEqual(list_1.sum_list_elements(), [])
 
+    def test_sum_with_one_number(self):
+        list_1 = SumList([55])
+        self.assertEqual(list_1.sum_list_elements(), 55)
+
 if __name__ == '__main__':
     unittest.main()
