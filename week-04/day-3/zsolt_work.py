@@ -38,3 +38,16 @@ class CountLetter():
             else:
                 dic[letter] += 1
         return dic
+
+class Fibonacci():
+    # def __init__(self, num):
+    #     self.num = num
+
+    def fibonacci(self, num):
+        self.num = num
+        if self.num == 0:
+            return 0
+        elif self.num == 1:
+            return 1
+        else:
+            return self.fibonacci(num-1) + self.fibonacci(num-2)

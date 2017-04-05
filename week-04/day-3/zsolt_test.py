@@ -33,5 +33,10 @@ class TestCountLetter(unittest.TestCase):
         word = CountLetter("terrier")
         self.assertEqual(word.count_letter(), {"t": 1, "e": 2, "r": 3, "i": 1})
 
+class TestFibonacci(unittest.TestCase):
+    def test_fibonacci(self):
+        number = Fibonacci()
+        self.assertEqual(number.fibonacci(5), 5)
+
 if __name__ == '__main__':
     unittest.main()
