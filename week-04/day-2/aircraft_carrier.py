@@ -1,6 +1,7 @@
 #AIRCRAFT CARRIER
 
 class Aircraft(object):
+
     def __init__(self, plane_type, max_ammo = 0, base_damage = 0, ammo = 0):
         self.ammo = ammo
         self.max_ammo = max_ammo
@@ -42,10 +43,30 @@ class F35(Aircraft):
         self.max_ammo = 12
         self.base_damage = 50
 
+class Carrier(object):
+
+    def __init__(self, ammo_store, hp, hangar = []):
+        self.ammo_store = ammo_store
+        self.health_point = hp
+        self.hangar = hangar
+
+    def add_aircraft(self, plane_type):
+        self.hangar.append(plane_type)
+
+    def fill(self):
+        pass
+
+    def fight(self):
+        pass
+
+    def get_status(self):
+        pass
+
+
 aircraft_1 = F16("F16", 8, 30)
 aircraft_2 = F35("F35", 12, 50)
 
-print(aircraft_1.refill(200))
+print(aircraft_1.refill(5))
 print("\n")
 print(aircraft_1.figth())
 print("\n")
