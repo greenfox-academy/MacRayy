@@ -1,0 +1,38 @@
+from random import randint
+
+class Pirate(object):
+    def __init__(self):
+        self.toxic_o_mater = 0
+        self.alive = True
+        self.passed_out = False
+
+    def drink_some_rum(self):
+        self.toxic_o_mater += 1
+
+    def hows_it_going_mate(self):
+        if self.toxic_o_mater < 4:
+            print("Aye lad, Pour me anudder!")
+            self.drink_some_rum()
+        else:
+            print("Arghh, I'ma Pirate. How d'ya d'ink its goin?")
+            self.passed_out = True
+            self.toxic_o_mater = 0
+
+    def die(self):
+        self.alive = False
+
+    def brawl(self, other_pirate):
+        other_pirate = other_pirate
+        other_pirate = Pirate()
+        if other_pirate.alive:
+            dice = randint(1, 3)
+            print(dice)
+            if dice == 1:
+                self.die()
+            elif dice == 2:
+                other_pirate.die()
+            elif dice == 3:
+                self.passed_out = True
+                other_pirate.passed_out = True
+
+hook = Pirate()
