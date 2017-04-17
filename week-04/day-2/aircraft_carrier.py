@@ -2,13 +2,13 @@
 
 class Aircraft(object):
 
-    def __init__(self, plane_type, max_ammo = 0, base_damage = 0, ammo = 0):
-        self.ammo = ammo
-        self.max_ammo = max_ammo
-        self.base_damage = base_damage
+    def __init__(self, plane_type):
+        self.ammo = 0
+        self.max_ammo = 0
+        self.base_damage = 0
         self.plane_type = plane_type
 
-    def figth(self):
+    def fight(self):
         damage = self.ammo * self.base_damage
         self.ammo = 0
         return damage
@@ -32,46 +32,74 @@ class Aircraft(object):
         return status
 
 class F16(Aircraft):
-    def __init__(self, plane_type, max_ammo, base_damage, ammo = 0):
-        super().__init__(plane_type, ammo)
+    def __init__(self, plane_type):
+        super().__init__(plane_type)
+        self.ammo = 0
         self.max_ammo = 8
         self.base_damage = 30
 
 class F35(Aircraft):
-    def __init__(self, plane_type, max_ammo, base_damage, ammo = 0):
-        super().__init__(plane_type, ammo)
+    def __init__(self, plane_type):
+        super().__init__(plane_type)
+        self.ammo = 0
         self.max_ammo = 12
         self.base_damage = 50
 
 class Carrier(object):
-
-    def __init__(self, ammo_store, hp, hangar = []):
+    def __init__(self, ammo_store = 2500, hp = 4000):
         self.ammo_store = ammo_store
         self.health_point = hp
-        self.hangar = hangar
+        self.hangar = []
 
-    def add_aircraft(self, plane_type):
-        self.hangar.append(plane_type)
+    def add_aircraft(self, airplane_type):
+        if airplane_type == "F16":
+            f16 = F16("F16")
+            self.hangar.append(f16)
+        elif airplane_type == "F35":
+            f35 = F35("F35")
+            self.hangar.append(f35)
+        else:
+            print("Cannot add othan than F16 or F35")
 
     def fill(self):
-        pass
+        if self.ammo_store > 0:
+            for plane in self.hangar:
+                while plane.plane_type == "F35" and plane.ammo == 0:
+                    plane.refill(self.ammo_store)
+                    self.ammo_store -= plane.ammo
+                    if self.ammo_store <= 0:
+                        break
+            for plane in self.hangar:
+                while plane.plane_type == "F16" and plane.ammo == 0:
+                    plane.refill(self.ammo_store)
+                    self.ammo_store -= plane.ammo
+                    if self.ammo_store <= 0:
+                        break
+        else:
+            print("Not enough ammo to refill")
 
-    def fight(self):
-        pass
+    def fight(self, enemy):
+        self.enemy = enemy
+        self.enemy = Carrier()
+        self.total_damage = 0
+        for plane in self.hangar:
+            self.total_damage += plane.fight()
+            self.enemy.health_point -= plane.fight()
+        return self.total_damage
 
     def get_status(self):
-        pass
+        print("Aircraft count: " + str(len(self.hangar)) + ", Ammo Storage: " + str(self.ammo_store) + ", Total damage: " + str(self.total_damage))
+        for plane in self.hangar:
+            print("Type " + plane.plane_type + ", Ammo: " + str(plane.ammo) + ", Base Damage: " + str(plane.base_damage) + ", All Damage: " + str(plane.fight()))
 
 
-aircraft_1 = F16("F16", 8, 30)
-aircraft_2 = F35("F35", 12, 50)
-
-print(aircraft_1.refill(5))
-print("\n")
-print(aircraft_1.figth())
-print("\n")
-print(aircraft_1.refill(100))
-print("\n")
-print(aircraft_1.get_type())
-print("\n")
-print(aircraft_1.get_status())
+enterprise = Carrier(55, 4000)
+enterprise.add_aircraft("F16")
+enterprise.add_aircraft("F35")
+enterprise.add_aircraft("F16")
+enterprise.add_aircraft("F35")
+enterprise.fill()
+enterprise.fight("Lexington")
+enterprise.get_status()
+enterprise.fill()
+enterprise.get_status()
