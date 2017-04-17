@@ -41,21 +41,39 @@ class Pirate(object):
                 return self.passed_out, other_pirate.passed_out
 
 class Ship(object):
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.crew = []
-        self.captain = []
+        self.captain = None
 
     def fill_ship(self, pirate):
-        if self.captain == []:
+        if self.captain == None:
             pirate = Pirate()
-            self.captain.append(pirate)
-            self.captain.append(pirate)
+            self.captain = pirate
+            self.crew.append(pirate)
         else:
             pirate = Pirate()
             self.crew.append(pirate)
 
-black_death = Ship()
+    def get_ship_status(self):
+        if self.captain.alive:
+            print("Captain's consumed " + str(self.captain.toxic_o_mater) + " bottles of rum, and Passed out: " + str(self.captain.passed_out))
+        else:
+            print("Captain is dead")
+        print("Alive crew members:")
+        alive_crew = []
+        for pirate in self.crew:
+            if pirate.alive:
+                alive_crew.append(pirate)
+        print(len(alive_crew))
+
+
+
+black_death = Ship("Black Death")
+
 black_death.fill_ship("dirty_fred")
 black_death.fill_ship("mr_heinz")
 black_death.fill_ship("jim_hawkins")
 black_death.fill_ship("long_john_silver")
+
+black_death.get_ship_status()
