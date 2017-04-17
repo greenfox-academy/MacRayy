@@ -40,4 +40,11 @@ class Pirate(object):
                 other_pirate.passed_out = True
                 return self.passed_out, other_pirate.passed_out
 
+class Ship(object):
+    def __init__(self):
+        self.crew = []
+        self.captain = None
+
+    
+
 hook = Pirate()
