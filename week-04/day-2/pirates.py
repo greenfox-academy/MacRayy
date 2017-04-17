@@ -43,8 +43,19 @@ class Pirate(object):
 class Ship(object):
     def __init__(self):
         self.crew = []
-        self.captain = None
+        self.captain = []
 
-    
+    def fill_ship(self, pirate):
+        if self.captain == []:
+            pirate = Pirate()
+            self.captain.append(pirate)
+            self.captain.append(pirate)
+        else:
+            pirate = Pirate()
+            self.crew.append(pirate)
 
-hook = Pirate()
+black_death = Ship()
+black_death.fill_ship("dirty_fred")
+black_death.fill_ship("mr_heinz")
+black_death.fill_ship("jim_hawkins")
+black_death.fill_ship("long_john_silver")
