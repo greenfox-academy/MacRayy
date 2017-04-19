@@ -1,0 +1,19 @@
+.item {
+    height: 150px;
+    float: left;
+}
+
+.green {
+    background-color: green;
+    width: 25%;
+}
+
+.yellow {
+    background-color: yellow;
+    width: 50%;
+}
+
+.purple {
+    background-color: purple;
+    width: 25%;
+}
