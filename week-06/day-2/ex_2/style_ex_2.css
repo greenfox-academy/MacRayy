@@ -1,6 +1,7 @@
-.item {
+.container {
     height: 150px;
-    float: left;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .green {
