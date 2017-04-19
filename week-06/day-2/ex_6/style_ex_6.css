@@ -24,14 +24,14 @@ header ul {
 .item {
     background-color: cyan;
     margin-right: 10px;
-    padding: 5px 20px;
+    padding: 5px 30px;
     align-self: center;
 }
 
 .sideitem {
     background-color: cyan;
     margin-right: 10px;
-    padding: 5px 20px;
+    padding: 5px 10px;
     align-self: center;
 }
 
@@ -65,9 +65,24 @@ main {
 
 .redbox {
     background-color: tomato;
-    flex: 1 1 40px;
-    padding: 50px 25px;
+    flex: 1;
+    min-width: 15%;
+    padding: 80px 25px;
     margin: 10px;
+}
+
+main p {
+    margin: 20px 10px;
+}
+
+article {
+    display: flex;
+    justify-content: flex-start;
+}
+
+article p {
+    flex: 1;
+    align-self: flex-start;
 }
 
 aside {
@@ -75,6 +90,17 @@ aside {
     flex: 1 1 400px;
 }
 
+.greybox {
+    background-color: grey;
+    margin: 10px;
+    padding: 20px;
+}
+
+aside p {
+    margin: 20px 10px;
+}
+
 p {
     font-family: Arial, sans-serif;
+    text-align: justify;
 }
