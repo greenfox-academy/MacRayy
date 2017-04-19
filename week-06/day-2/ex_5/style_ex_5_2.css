@@ -1,0 +1,55 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.wrapper {
+    margin: auto;
+    width: 100%;
+    margin: 1%;
+}
+
+header {
+    background-color: skyblue;
+    padding: 50px;
+}
+
+.main {
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main {
+    background-color: #20d1ac;
+    flex-grow: 2;
+    margin: 0 2%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.black.box {
+    background-color: black;
+    align-self: flex-end;
+    width: 80px;
+    height: 80px;
+    margin: 3%;
+}
+
+aside  {
+    width: 150px;
+}
+
+.left {
+    background-color: orange;
+}
+
+.right {
+    background-color: purple;
+}
+
+footer {
+    background-color: blue;
+    padding: 50px;
+}
