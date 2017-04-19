@@ -13,17 +13,25 @@
 header {
     background-color: purple;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.link-container {
+header ul {
     display: flex;
-    justify-content: flex-start;
 }
 
 .item {
     background-color: cyan;
     margin-right: 10px;
-    padding: 5px 10px;
+    padding: 5px 20px;
+    align-self: center;
+}
+
+.sideitem {
+    background-color: cyan;
+    margin-right: 10px;
+    padding: 5px 20px;
     align-self: center;
 }
 
@@ -48,7 +56,25 @@ main {
     flex: 1 1 100%;
 }
 
+.box-container {
+    min-height: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.redbox {
+    background-color: tomato;
+    flex: 1 1 40px;
+    padding: 50px 25px;
+    margin: 10px;
+}
+
 aside {
     background-color: green;
     flex: 1 1 400px;
+}
+
+p {
+    font-family: Arial, sans-serif;
 }
