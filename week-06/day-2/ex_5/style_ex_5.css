@@ -1,0 +1,27 @@
+.container {
+    width: 600px;
+    height: 300px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+.green {
+    display: none;
+    background-color: green;
+    flex-grow: 1;
+    order: 0;
+}
+
+.yellow {
+    display: none;
+    background-color: yellow;
+    position: absolute;
+}
+
+.purple {
+    background-color: purple;
+    align-self: center;
+    width: 100px;
+    height: 100px;
+}
