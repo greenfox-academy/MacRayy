@@ -6,7 +6,7 @@
 
 .wrapper {
     margin: auto;
-    width: 900px;
+    max-width: 1000px;
     margin-top: 20px;
 }
 
@@ -30,21 +30,22 @@ header {
 
 a {
     text-decoration: none;
-    color: black;
+    color: cyan;
+    padding-left: 10px;
 }
 
 .main {
-    height: 800px;
+    min-height: 100%;
     display: flex;
     justify-content: flex-start;
 }
 
 main {
     background-color: yellow;
-    flex-grow: 2;
+    flex: 1 1 100%;
 }
 
 aside {
     background-color: green;
-    flex-grow: 1;
+    flex: 1 1 400px;
 }
