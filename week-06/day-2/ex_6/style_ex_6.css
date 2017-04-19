@@ -1,0 +1,50 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.wrapper {
+    margin: auto;
+    width: 900px;
+    margin-top: 20px;
+}
+
+header {
+    background-color: purple;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.item {
+    list-style: none;
+    background-color: cyan;
+    margin-right: 10px;
+    padding: 5px 10px;
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    height: 800px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main {
+    background-color: yellow;
+    flex-grow: 2;
+}
+
+aside {
+    background-color: green;
+    flex-grow: 1;
+}
