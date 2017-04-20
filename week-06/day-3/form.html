@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="style_form.css">
 </head>
 <body>
@@ -13,15 +14,76 @@
 
         <h1>Profil</h1>
 
-        <div class="basic details">
-            <div class="personal detals">
 
+        <form class="form" action="#" method="post">
+            <div class="basic details">
+                <div class="personal details">
+                    <h2>Personal Details</h2>
+
+                    <label for="name">Name <span>*</span></label>
+                    <input type="text" id="name" name="user_name">
+
+                    <div class="birth gender">
+                        <label for="birth">Year of birth</label>
+                        <input type="text" id="birth" name="birth_date" placeholder="eg 1984">
+
+                        <label>Gender</label>
+                        <input type="radio" name="gender">
+                        <p>Male</p>
+                        <input type="radio" name="gender">
+                        <p>Female</p>
+                    </div>
+
+                    <label>Favorite brands</label>
+                    <div class="brands">
+                        <input type="checkbox" name="addidas">
+                        <p>Addidas</p>
+                        <input type="checkbox" name="apple">
+                        <p>Apple</p>
+                        <input type="checkbox" name="coca-cola">
+                        <p>Coca-Cola</p>
+                        <input type="checkbox" name="mazda">
+                        <p>Mazda</p>
+                        <input type="checkbox" name="nike">
+                        <p>Nike</p>
+                        <input type="checkbox" name="opel">
+                        <p>Ople</p>
+                        <input type="checkbox" name="ray-ben">
+                        <p>Ray-Ben</p>
+                        <input type="checkbox" name="starbucks">
+                        <p>Starbucks</p>
+                        <input type="checkbox" name="tesla">
+                        <p>Tesla</p>
+                        <input type="checkbox" name="yahoo">
+                        <p>Yahoo</p>
+                    </div>
+                    <p>You can choose more</p>
+
+                </div>
             </div>
+
             <div class="contacts">
-                
-            </div>
-        </div>
+                <h2>Contacts</h2>
 
+                <label for="phone">Phone number</label>
+                <input type="number" id="phone" name="phone_number" placeholder="+36 -- --- ---">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="name@mail.com">
+
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="name@mail.com">
+
+            </div>
+
+            <div class="box">
+
+            </div>
+
+            <div class="buttons">
+
+            </div>
+        </form>
     </div>
 
 </body>
