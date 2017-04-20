@@ -59,16 +59,16 @@ main {
 .box-container {
     min-height: 20px;
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-wrap: wrap;    
 }
 
 .redbox {
     background-color: tomato;
-    flex: 1;
-    min-width: 15%;
-    padding: 80px 25px;
-    margin: 10px;
+    flex: 1 1 25%;
+    height: 5rem;
+    box-sizing: border-box;
+    border: 0.5rem solid yellow;
 }
 
 main p {
