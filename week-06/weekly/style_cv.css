@@ -1,6 +1,6 @@
 .wrapper {
     margin: auto;
-    max-width: 800px;
+    max-width: 900px;
     font-family: Arial, sans-serif;
 }
 
@@ -15,6 +15,7 @@
     text-decoration: none;
     color: rgb(100, 100, 100);
     padding: 5px;
+    display: flex;
 }
 
 .menubar__menu.inlinks {
@@ -26,5 +27,23 @@
 }
 
 .container {
-    
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+
+.container__text {
+    flex: 1 1 70%;
+}
+
+.container__info {
+    background-color: rgb(71, 71, 71);
+    color: rgb(253, 255, 252);
+    flex: 1 1 30%;
+}
+
+.container__info--img {
+    display: block;
+    width: 80%;
+    margin: 10%;
 }
