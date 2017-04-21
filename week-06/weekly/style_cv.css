@@ -1,0 +1,30 @@
+.wrapper {
+    margin: auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+.menubar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #20d1ac;
+    padding: 10px;
+}
+
+.menubar__menu a {
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+    padding: 5px;
+}
+
+.menubar__menu.inlinks {
+    justify-content: flex-start;
+}
+
+.menubar__menu.exlinks {
+    justify-content: flex-end;
+}
+
+.container {
+    
+}
