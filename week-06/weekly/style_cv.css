@@ -36,18 +36,16 @@
     padding: 10px;
     left: 0;
     right: 0;
-    position: fixed;
-    width: 100%;
+    /*position: fixed;
+    width: 100%;*/
 }
 
 .menubar__menu.inlinks {
     justify-content: flex-start;
-    position: fixed;
 }
 
 .menubar__menu.exlinks {
     justify-content: flex-end;
-    position: fixed;
 }
 
 .menubar__menu a {
