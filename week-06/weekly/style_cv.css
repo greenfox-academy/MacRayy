@@ -1,49 +1,125 @@
+.cv-page {
+    background-color: #FAF3E6;
+    border: 0;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper:before {
+    content: "";
+    height: 20px;
+    background: url(img/img-lg-horiz-border.png) repeat-x 0 -2px;
+    background-size: 50em;
+    display: block;
+}
+
 .wrapper {
-    margin: auto;
-    max-width: 900px;
-    font-family: Arial, sans-serif;
+    width: 99%;
+    background-size: .75em;
+    margin: .5em auto;
+    padding: 0 2px;
+    background: url(img/img-lg-vert-border.png) repeat-y top left, url(img/img-lg-vert-border.png) repeat-y right 100px;
+    background-size: .75em;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6rem;
+    color: #272625;
+    display: flex;
+    flex-direction: column;
 }
 
 .menubar {
     display: flex;
     justify-content: space-between;
-    background-color: #20d1ac;
+    background-color: #97AA9E;
     padding: 10px;
-}
-
-.menubar__menu a {
-    text-decoration: none;
-    color: rgb(100, 100, 100);
-    padding: 5px;
-    display: flex;
+    left: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
 }
 
 .menubar__menu.inlinks {
     justify-content: flex-start;
+    position: fixed;
 }
 
 .menubar__menu.exlinks {
     justify-content: flex-end;
+    position: fixed;
+}
+
+.menubar__menu a {
+    text-decoration: none;
+    padding: 5px;
+    display: flex;
+    color: #FAF3E6;
 }
 
 .container {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row-reverse;
+    max-width: 30rem;
+    text-align: justify;
+    margin: auto;
+}
+
+.container__text--intro {
+    order: 0;
+}
+
+.container__text--title {
+    font-size: 6em;
+    font-style: italic;
+    padding: 80px 20px;
+    margin: auto;
+    text-align: center;
 }
 
 .container__text {
-    flex: 1 1 70%;
+    order: 2;
 }
 
 .container__info {
-    background-color: rgb(71, 71, 71);
-    color: rgb(253, 255, 252);
-    flex: 1 1 30%;
+    order: 1;
+}
+
+.container--subtitle {
+    font-size: 2.6em;
+    font-family: 'Nova Square', sans-serif;
+    text-align: center;
+    letter-spacing: .05em;
+    padding: .75em 0;
+    margin: .35em auto .75em;
+    background: url(img/img-lg-horiz-border.png) repeat-x top right , url(img/img-lg-horiz-border.png) repeat-x bottom left;
+    background-size: 15em;
+    line-height: 1;
+    letter-spacing: .25rem
 }
 
 .container__info--img {
     display: block;
     width: 80%;
     margin: 10%;
+    border-radius: 15px;
+    /*box-shadow: */
+}
+
+.container__footer {
+    order: 4;
+}
+
+.container__footer--img {
+    display: block;
+    max-width: 50%;
+    margin: 50px auto 0;
+}
+
+.container__footer:after {
+    content: "";
+    height: 20px;
+    width: 100%;
+    margin: 0 auto;
+    background: url(img/img-lg-horiz-border.png) repeat-x bottom left;
+    background-size: 50em;
+    display: block;
 }

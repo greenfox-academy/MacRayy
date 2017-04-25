@@ -5,69 +5,104 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style_cv.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style_cv.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link <link href="https://fonts.googleapis.com/css?family=Nova+Square" rel="stylesheet">
 </head>
-<body>
-
+<body class="cv-page">
+        <nav class="menubar">
+            <ul class="menubar menubar__menu inlinks">
+                <li><a href="#basics">Personal info</a></li>
+                <li><a href="#xp">Work experiance</a></li>
+                <li><a href="#edu">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#likes">Likes</a></li>
+            </ul>
+            <ul class="menubar menubar__menu exlinks">
+                <li><a href="#">ikon img</a></li>
+                <li><a href="#">ikon img</a></li>
+                <li><a href="#">ikon img</a></li>
+            </ul>
+        </nav>
     <div class="wrapper">
-        <header>
-            <nav class="menubar">
-                <ul class="menubar menubar__menu inlinks">
-                    <li><a href="#">Personal info</a></li>
-                    <li><a href="#">Work experiance</a></li>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Skills</a></li>
-                </ul>
-                <ul class="menubar menubar__menu exlinks">
-                    <li><a href="#">ikon img</a></li>
-                    <li><a href="#">ikon img</a></li>
-                    <li><a href="#">ikon img</a></li>
-                </ul>
-            </nav>
-        </header>
+            <section class="container__text--intro">
+                <h1 class="container__text--title">Zsolt Makrai</h1>
+                    <!-- <p class="container__text-title ">curriculum vitae</p> -->
+            </section>
+            <main class="container container__text">
+                <section class="container container__text--work">
+                    <h2 id="xp" class="container--subtitle">WORK EXPERIENCE</h2>
+                        <p>2012 - 2017</p>
+                        <p><span>Freelancer Assistant Director</span><br>I worked in Hungarian and international productions of feature films, tv ads, short films and video clips. I was a crew member of movies, like the Academy Award winning Son of Saul, the 101 years old man... and Aurora Borealis and several commercials.<br>During shootings I learned to work as a member of a crew and as well leading of a team. Since film making is mostly a team work I developed a decent communication skill to work efficiently with extras and fellow crew members.<br>I also had a lot of oppurtunities to work with foriegn crew, therefore I am familiar and used to the international working enviroment.<br>As the film industry is time oriented and I guess one of the most stressful workplaces, I also learned even under pressure to respect the deadlines and to work as precise as possible in limited time.</p>
 
-        <div class="container">
-            <main class="container__text">
-                <h1>Zsolt Makrai</h1>
+                        <p>2009 - 2012</p>
+                        <p><span>Titanic International Film Festival</span><br><span>Voulenteer organiser</sapn><br>As a voulenteer I was working together with the crew of the cinema during the festival and I helped and informed the visitors about the screenings and movies.</p>
+                </section>
 
-                <h2>WORK EXPERIENCE</h2>
-                <p>2012 - 2016</p>
-                <p><span>Freelancer Assistant Director</span><br>I worked in Hungarian and international productions of feature films, tv ads, short films and video clips. I was a crew member of movies, like the Academy Award winning Son of Saul, the 101 years old man... and Aurora Borealis and several commercials.<br>During shootings I learned to work as a member of a crew and as well leading of a team. Since film making is mostly a team work I developed a decent communication skill to work efficiently with extras and fellow crew members.<br>I also had a lot of oppurtunities to work with foriegn crew, therefore I am familiar and used to the international working enviroment.<br>As the film industry is time oriented and I guess one of the most stressful workplaces, I also learned even under pressure to respect the deadlines and to work as precise as possible in limited time.</p>
+                <section class="container container__text--edu">
+                    <h2 id="edu" class="container--subtitle">EDUCATION</h2>
+                        <p>2017</p>
+                        <p>GreenFox Academy</p>
 
-                <p>2009 - 2012</p>
-                <p><span>Titanic International Film Festival</span><br><span>Voulenteer organiser</sapn><br>As a voulenteer I was working together with the crew of the cinema during the festival and I helped and informed the visitors about the screenings and movies.</p>
+                        <p>2011 - 2014</p>
+                        <p>Eötvös Loránd University Faculty of Philosophy and Arts Cinema Studies MA</p>
 
-                <h2>EDUCATION</h2>
-                <p>2011 - 2014</p>
-                <p>Eötvös Loránd University Faculty of Philosophy and Arts Cinema Studies MA</p>
+                        <p>2007 - 2011</p>
+                        <p>Eötvös Loránd University Faculty of Philosophy and Arts<br>Liberal Arts BA<br>Film theory and film history major, Editorial knowledge minor</p>
 
-                <p>2007 - 2011</p>
-                <p>Eötvös Loránd University Faculty of Philosophy and Arts<br>Liberal Arts BA<br>Film theory and film history major, Editorial knowledge minor</p>
+                        <p>2010 spring</p>
+                        <p>Charles University Faculty of Philosophy and Arts, Prague<br>Film Department Erasmus scholarship in Prague</p>
 
-                <p>2010 spring</p>
-                <p>Charles University Faculty of Philosophy and Arts, Prague<br>Film Department Erasmus scholarship in Prague</p>
+                    <h2 id="likes" class="container--subtitle">LIKES</h2>
+                        <ul>
+                            <li>Taking walks with my dog</li>
+                            <li>Watching movies or TV shows</li>
+                            <li>Playing video games</li>
+                            <li>Reading books and comics</li>
+                        </ul>
+                </section>
             </main>
-            <aside class="container__info">
-                <img class="container__info--img" src="img/me.jpg" alt="profil picture">
-                <h2>BASICS</h2>
-                <dl>
-                    <dt>NAME</dt>
-                    <dd>Zsolt Makrai</dd>
-                    <dt>BIRTH TIME</dt>
-                    <dd>05. 11. 1987</dd>
-                    <dt>ADDRESS</dt>
-                    <dd>1136 Budapest, Hegedűs Gyula utca 33.</dd>
-                    <dt>PHONE</dt>
-                    <dd>+36 20 551 2697</dd>
-                    <dt>E-MAIL</dt>
-                    <dd>mecrai@gmail.com</dd>
-                </dl>
+            <aside class="container container__info">
+                <img class="container container__info--img" src="img/me.jpg" alt="profil picture">
 
-                <h2>SKILLS</h2>
+                <h2 id="basics" class="container--subtitle">BASICS</h2>
+                    <dl>
+                        <dt>NAME</dt>
+                        <dd>Zsolt Makrai</dd>
+                        <dt>BIRTH TIME</dt>
+                        <dd>05. 11. 1987</dd>
+                        <dt>ADDRESS</dt>
+                        <dd>1136 Budapest, Hegedűs Gyula utca 33.</dd>
+                        <dt>PHONE</dt>
+                        <dd>+36 20 551 2697</dd>
+                        <dt>E-MAIL</dt>
+                        <dd>mecrai@gmail.com</dd>
+                    </dl>
 
+                <h2 id="skills" class="container--subtitle">SKILLS</h2>
+                    <ul>
+                        <li>English ★★★</li>
+                        <li>German ★★</li>
+                        <li>MS Win ★★★★★</li>
+                        <li>MS Word ★★★★★</li>
+                        <li>MS Excel ★★★</li>
+                        <li>MacOSX ★★★★★</li>
+                        <li>Prezi ★★★★</li>
+                        <li>Adobe Pr ★★★</li>
+                        <li>HTML and CSS ★★★</li>
+                        <li>Python ★★★</li>
+                        <li>Git ★★★</li>
+                        <li>Creativity ★★★★</li>
+                        <li>Work in a group ★★★★★</li>
+                        <li>Problem solving ★★★★</li>
+                        <li>Reliability ★★★★★</li>
+                        <li>Integration ★★★★</li>
+                    </ul>
             </aside>
-
+            <footer  class="container__footer">
+                <img class="container__footer--img" src="img/mancamera.png" alt="man with camera">
+            </footer>
     </div>
 </body>
 </html>
