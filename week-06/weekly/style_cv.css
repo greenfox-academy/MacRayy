@@ -33,18 +33,20 @@
     display: flex;
     justify-content: space-between;
     background-color: #97AA9E;
-    padding: 10px;
+    padding: 20px;
+    top: 0;
     left: 0;
     right: 0;
-    /*position: fixed;
-    width: 100%;*/
+    position: fixed;
 }
 
-.menubar__menu.inlinks {
+.inlinks {
+    display: flex;
     justify-content: flex-start;
 }
 
-.menubar__menu.exlinks {
+.exlinks {
+    display: flex;
     justify-content: flex-end;
 }
 
@@ -69,8 +71,9 @@
     font-size: 6em;
     font-style: italic;
     padding: 80px 20px;
-    margin: auto;
+    margin: auto auto -70px;
     text-align: center;
+    line-height: normal;
 }
 
 .container__text {
