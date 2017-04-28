@@ -1,3 +1,12 @@
+.arrow-down {
+    margin: 66px auto 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid #F7644D;
+}
+
 .cv-page {
     background-color: #FAF3E6;
     border: 0;
@@ -18,7 +27,7 @@
 .wrapper {
     width: 99%;
     background-size: .75em;
-    margin: .5em auto;
+    margin: -6em auto .5em;
     padding: 0 2px;
     background: url(img/img-lg-vert-border.png) repeat-y top left, url(img/img-lg-vert-border.png) repeat-y right 100px;
     background-size: .75em;
@@ -33,7 +42,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #97AA9E;
-    padding: 20px;
+    padding: 16px;
     top: 0;
     left: 0;
     right: 0;
@@ -52,9 +61,20 @@
 
 .menubar__menu a {
     text-decoration: none;
+    font-family: 'Poiret One', cursive;
+    font-size: 16px;
     padding: 5px;
     display: flex;
     color: #FAF3E6;
+    border: 2px solid #CCCCCC;
+    background: linear-gradient(to bottom, rgba(39,38,37,1) 0%, rgba(102,102,102,1) 33%, rgba(143,142,141,1) 50%, rgba(39,38,37,1) 100%);
+    border-radius: 15px;
+    margin: 2px;
+}
+
+.menubar__menu a:hover {
+    color: #FF9900;
+    background: linear-gradient(to bottom, rgba(39,38,37,1) 0%, rgba(143,142,141,1) 50%, rgba(102,102,102,1) 67%, rgba(39,38,37,1) 100%);
 }
 
 .container {
@@ -90,7 +110,7 @@
     text-align: center;
     letter-spacing: .05em;
     padding: .75em 0;
-    margin: .35em auto .75em;
+    margin: .75em auto .75em;
     background: url(img/img-lg-horiz-border.png) repeat-x top right , url(img/img-lg-horiz-border.png) repeat-x bottom left;
     background-size: 15em;
     line-height: 1;
@@ -102,7 +122,33 @@
     width: 80%;
     margin: 10%;
     border-radius: 15px;
+    border: 2px solid #CCCCCC;
     /*box-shadow: */
+}
+
+.basics {
+    display: inline;
+}
+
+.basics li {
+    margin-bottom: 1em;
+}
+
+.basics-key:after {
+    content: ".....................................................................................................................";
+    float: left;
+    width: 0;
+}
+
+.basics-key {
+    background: #faf3e6;
+    padding-right: .5em;
+}
+
+.basics-value {
+    float: right;
+    background: #faf3e6;
+    padding-left: .5em;
 }
 
 .container__footer {
