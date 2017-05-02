@@ -10,3 +10,11 @@
 //  John Doe
 //  31
 //  1.87
+
+function aboutMe() {
+    console.log('Zsolt Makrai');
+    console.log(29);
+    console.log(1.86);
+}
+
+aboutMe();
