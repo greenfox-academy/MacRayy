@@ -16,9 +16,13 @@ var workHoursWeekly = 52
 
 function countCodingHours() {
     var totalCoding = dailyCode * weekDays * semester;
-    console.log(totalCoding + ' hours spent with coding in a semester');
+    return totalCoding;
 }
 
+function countPercentageOfCoding() {
+    var percentageOfCoding = countCodingHours() / workHoursWeekly;
+    return percentageOfCoding;
+}
 
-
-countCodingHours();
+console.log(countCodingHours() + ' hours spent with coding in a semester');
+console.log('percentage of the coding hours in the semester is: ' + countPercentageOfCoding())
