@@ -103,7 +103,7 @@ if (j % 3 === 0 && j % 5 === 5) {
 var k = 'Apple';
 // fill the k variable with its content 4 times
 while (k !== 'AppleAppleAppleApple') {
-    k += 'Apple'
+    k += 'Apple';
 }
 
 console.log(k);

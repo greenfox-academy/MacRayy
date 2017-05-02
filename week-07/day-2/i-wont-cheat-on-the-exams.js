@@ -5,8 +5,8 @@
 
 function writesLines100Times(line) {
     for (var i = 0; i < 101; i++) {
-        console.log(i + ' ' +line)
+        console.log(i + ' ' +line);
     }
 }
 
-writesLines100Times('I won\'t cheat on the exam!')
+writesLines100Times('I won\'t cheat on the exam!');

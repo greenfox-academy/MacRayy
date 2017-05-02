@@ -25,4 +25,4 @@ function countPercentageOfCoding() {
 }
 
 console.log(countCodingHours() + ' hours spent with coding in a semester');
-console.log('percentage of the coding hours in the semester is: ' + countPercentageOfCoding())
+console.log('percentage of the coding hours in the semester is: ' + countPercentageOfCoding());

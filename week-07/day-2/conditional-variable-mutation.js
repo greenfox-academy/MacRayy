@@ -4,7 +4,7 @@ var a = 24;
 var out = 0;
 // if a is even increment out by one
 if (a % 2 === 0) {
-    out++
+    out++;
 }
 
 console.log(out);
@@ -18,11 +18,11 @@ var out2 = '';
 // if less than 10 set out2 to "More!",
 // if more than 20 set out2 to "Less!"
 if (b >= 10 && b <= 20) {
-    out2 = 'Sweet'
+    out2 = 'Sweet';
 } else if (b < 10) {
-    out2 = 'More'
+    out2 = 'More';
 } else {
-    out2 = 'Less'
+    out2 = 'Less';
 }
 
 console.log(out2);
