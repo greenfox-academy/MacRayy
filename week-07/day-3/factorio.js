@@ -6,7 +6,7 @@ function getFactorio(number) {
     var factorio = 1;
     for (var num = 1; num < number + 1; num++) {
         factorio *= num;
-    };
+    }
     return factorio;
 }
 
