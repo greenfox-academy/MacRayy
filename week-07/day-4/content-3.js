@@ -5,3 +5,6 @@
 var firstParagraph = document.querySelector('p');
 var secondParagraph = document.querySelector('.output1');
 var thirdParagraph = document.querySelector('.output2');
+
+secondParagraph.innerHTML = firstParagraph.innerText;
+thirdParagraph.innerHTML = firstParagraph.innerHTML;
