@@ -9,20 +9,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="page">
-    <h1 class="title">Movie Poster Gallery</h1>
+    <div class="wrapper">
+        <h1 class="title">Movie Poster Gallery</h1>
 
-    <main>
-        <div class="main--image">
-            <img src="/Users/MrFox/OneDrive/greenfox/MacRayy/week-07/day-5/img/metropolis.jpg">
-        </div>
-    </main>
+        <main class="container__main--image">
+            <img src="img/metropolis.jpg" class="main--image">
+        </main>
 
-    <section>
-        <ul class="small--image">
-            <li><img src="/Users/MrFox/OneDrive/greenfox/MacRayy/week-07/day-5/img/sunset.jpg"></li>
-            <li><img src="/Users/MrFox/OneDrive/greenfox/MacRayy/week-07/day-5/img/kingkong.jpg"></li>
-        </ul>
-    </section>
-
-    <script src="gallery.js"></script>
+        <section>
+            <ul class="container__small--image">
+                <li class="list--item"><img src="img/sunset.jpg" class="small--image"></li>
+                <li class="list--item"><img src="img/kingkong.jpg" class="small--image"></li>
+            </ul>
+        </section>
+    </div>
+        <script src="gallery.js"></script>
 </body>

@@ -1,0 +1,34 @@
+.page {
+    background-color: #FAF3E6;
+    width: 100%;
+}
+
+.title {
+    font-size: 4em;
+    font-style: italic;
+    padding: 80px 20px;
+    margin: auto auto;
+    text-align: center;
+}
+
+.main--image {
+    max-width: 550px;
+    display: block;
+    margin: auto auto 10px;;
+}
+
+.container__small--image {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list--item {
+    margin: 10px;
+}
+
+.small--image {
+    display: inline-block;
+    max-width: 80px;
+}
