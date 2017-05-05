@@ -19,7 +19,7 @@
     max-width: 70%;
     width: 70%;
     display: flex;
-    margin: auto;
+    margin: 10px auto 50px;
     /*justify-content: space-around;*/
 }
 
@@ -32,9 +32,10 @@
 
 .arrow {
     background-color: grey;
-    flex: 1 1 10%;
+    /*flex: 1 1 10%;*/
     margin: auto 0;
     height: 50px;
+    border-radius: 40px;
 }
 
 .container__small--image {
