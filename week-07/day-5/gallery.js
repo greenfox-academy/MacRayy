@@ -20,20 +20,27 @@ var rightButton = document.querySelector('.right');
 var listIndex = 0;
 
 function changeImgSrcLeft() {
-    if (listIndex === imageList.length) {
-        listIndex = 0;
-    }
     listIndex ++;
     for (var i = 0; i < imageList.length; i++) {
-        console.log(i);
         if (i === listIndex) {
             mainImage.setAttribute('src', imageList[i].imgSrc);
+        } else if (listIndex === imageList.length) {
+            listIndex = 0
+            mainImage.setAttribute('src', imageList[i].imgSrc);
         }
-    };
+    }
 }
 
 function changeImgSrcRight() {
-
+    listIndex --;
+    for (var i = 0; i < imageList.length; i++) {
+        if (i === listIndex) {
+            mainImage.setAttribute('src', imageList[i].imgSrc);
+        } else if (listIndex === imageList.length) {
+            listIndex = 0
+            mainImage.setAttribute('src', imageList[i].imgSrc);
+        }
+    }
 }
 
 leftButton.addEventListener('click', changeImgSrcLeft);
