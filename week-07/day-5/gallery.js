@@ -12,5 +12,17 @@ var imageList = [
     description: 'some text to desctibe the image'}
 ];
 
-var mainImage = document.querySelector('main--image');
-var mainImageSrc = mainImage.getAttribute('src');
+var mainImage = document.querySelector('.main--image');
+
+var leftButton = document.querySelector('.left');
+var rightButton = document.querySelector('.right');
+
+function changeImgSrc() {
+    mainImage.setAttribute('src', 'img/sunset.jpg')
+}
+
+console.log(leftButton);
+console.log(rightButton);
+
+leftButton.addEventListener('click', changeImgSrc);
+rightButton.addEventListener('click', changeImgSrc);
