@@ -11,3 +11,6 @@ var imageList = [
     title: 'King Kong',
     description: 'some text to desctibe the image'}
 ];
+
+var mainImage = document.querySelector('main--image');
+var mainImageSrc = mainImage.getAttribute('src');

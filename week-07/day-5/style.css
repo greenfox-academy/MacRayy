@@ -24,7 +24,7 @@
 }
 
 .main--image {
-    width: 100%;
+    max-width: 90%;
     display: flex;
     flex: 2 2 90%;
     margin: auto;
