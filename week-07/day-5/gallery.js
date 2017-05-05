@@ -25,7 +25,7 @@ function changeImgSrcLeft() {
         if (i === listIndex) {
             mainImage.setAttribute('src', imageList[i].imgSrc);
         } else if (listIndex === imageList.length) {
-            listIndex = 0
+            listIndex = 0;
             mainImage.setAttribute('src', imageList[i].imgSrc);
         }
     }
@@ -33,12 +33,13 @@ function changeImgSrcLeft() {
 
 function changeImgSrcRight() {
     listIndex --;
+    console.log(listIndex);
     for (var i = 0; i < imageList.length; i++) {
         if (i === listIndex) {
             mainImage.setAttribute('src', imageList[i].imgSrc);
-        } else if (listIndex === imageList.length) {
-            listIndex = 0
-            mainImage.setAttribute('src', imageList[i].imgSrc);
+        } else if (listIndex === -1) {
+            listIndex = imageList.length;
+            mainImage.setAttribute('src', imageList[imageList.length - 1].imgSrc);
         }
     }
 }
