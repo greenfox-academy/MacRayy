@@ -17,12 +17,24 @@ var mainImage = document.querySelector('.main--image');
 var leftButton = document.querySelector('.left');
 var rightButton = document.querySelector('.right');
 
-function changeImgSrc() {
-    mainImage.setAttribute('src', 'img/sunset.jpg')
+var listIndex = 0;
+
+function changeImgSrcLeft() {
+    if (listIndex === imageList.length) {
+        listIndex = 0;
+    }
+    listIndex ++;
+    for (var i = 0; i < imageList.length; i++) {
+        console.log(i);
+        if (i === listIndex) {
+            mainImage.setAttribute('src', imageList[i].imgSrc);
+        }
+    };
 }
 
-console.log(leftButton);
-console.log(rightButton);
+function changeImgSrcRight() {
 
-leftButton.addEventListener('click', changeImgSrc);
-rightButton.addEventListener('click', changeImgSrc);
+}
+
+leftButton.addEventListener('click', changeImgSrcLeft);
+rightButton.addEventListener('click', changeImgSrcRight);
