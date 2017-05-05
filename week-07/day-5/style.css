@@ -1,6 +1,9 @@
 .page {
     background-color: #FAF3E6;
-    width: 100%;
+}
+
+.wrapper {
+    height: 1000px;
 }
 
 .title {
@@ -11,10 +14,27 @@
     font-family: 'Poiret One', cursive;
 }
 
+.container__main--image {
+    height: 60%;
+    max-width: 70%;
+    width: 70%;
+    display: flex;
+    margin: auto;
+    /*justify-content: space-around;*/
+}
+
 .main--image {
-    max-width: 60%;
-    display: block;
-    margin: auto auto 10px;;
+    width: 100%;
+    display: flex;
+    flex: 2 2 90%;
+    margin: auto;
+}
+
+.arrow {
+    background-color: grey;
+    flex: 1 1 10%;
+    margin: auto 0;
+    height: 50px;
 }
 
 .container__small--image {
