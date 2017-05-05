@@ -36,10 +36,11 @@ function changeImgSrcRight() {
     console.log(listIndex);
     for (var i = 0; i < imageList.length; i++) {
         if (i === listIndex) {
-            mainImage.setAttribute('src', imageList[i].imgSrc);
-        } else if (listIndex === -1) {
-            listIndex = imageList.length;
+            mainImage.setAttribute('src', imageList[listIndex].imgSrc);
+        }  else if (listIndex === -1) {
+            listIndex = imageList.length - 1;
             mainImage.setAttribute('src', imageList[imageList.length - 1].imgSrc);
+            console.log(listIndex);
         }
     }
 }
