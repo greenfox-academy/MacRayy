@@ -5,7 +5,12 @@
   <title>Workshop: Bookmarklets</title>
 </head>
 <body>
-  <a href="javascript:alert('nothing here yet!');">
+  <a href="javascript:(function() {
+      var titleList = document.querySelectorAll('h1');
+      for (var i = 0; i < titleList.length; i++) {
+          titleList[i].innerHTML = 'Green Fox Academy Conquers the World';
+      }
+  }());">
     Bookmarklet 1
   </a>
   <h1>Antoine de Saint-Exupery's 110th Birthday</h1>
