@@ -22,5 +22,4 @@ function addListItems(listItems) {
     }
 }
 
-// createListItems();
 addListItems(createListItems());
