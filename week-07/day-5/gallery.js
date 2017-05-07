@@ -34,10 +34,11 @@ function changeImgSrcRight() {
     listIndex --;
     for (var i = 0; i < imageList.length; i++) {
         if (i === listIndex) {
-            mainImage.setAttribute('src', imageList[listIndex].imgSrc);
+            mainImage.style.backgroundImage = 'url(' + imageList[i].url + ')';
         }  else if (listIndex === -1) {
             listIndex = imageList.length - 1;
-            mainImage.setAttribute('src', imageList[imageList.length - 1].imgSrc);
+            mainImage.style.backgroundImage = 'url(' + imageList[imageList.length - 1].imgSrc + ')';
+            // mainImage.setAttribute('src', imageList[imageList.length - 1].imgSrc);
         }
     }
 }
