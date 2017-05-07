@@ -1,19 +1,18 @@
 'use strict'
 
 var imageList = [
-    {imgSrc: 'img/metropolis.jpg',
+    {url: 'img/metropolis.jpg',
     title: 'Metropolis',
     description: 'some text to desctibe the image'},
-    {imgSrc: 'img/sunset.jpg',
+    {url: 'img/sunset.jpg',
     title: 'Sunset Boulevard',
     description: 'some text to desctibe the image'},
-    {imgSrc: 'img/kingkong.jpg',
+    {url: 'img/kingkong.jpg',
     title: 'King Kong',
     description: 'some text to desctibe the image'}
 ];
 
 var mainImage = document.querySelector('.main--image');
-
 var leftButton = document.querySelector('.left');
 var rightButton = document.querySelector('.right');
 
@@ -23,10 +22,10 @@ function changeImgSrcLeft() {
     listIndex ++;
     for (var i = 0; i < imageList.length; i++) {
         if (i === listIndex) {
-            mainImage.setAttribute('src', imageList[i].imgSrc);
+            mainImage.style.backgroundImage = 'url(' + imageList[i].url + ')';
         } else if (listIndex === imageList.length) {
             listIndex = 0;
-            mainImage.setAttribute('src', imageList[i].imgSrc);
+            mainImage.style.backgroundImage = 'url(' + imageList[i].url + ')';
         }
     }
 }

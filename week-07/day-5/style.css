@@ -24,10 +24,12 @@
 }
 
 .main--image {
+    background-image: url(img/metropolis.jpg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     max-width: 90%;
-    display: flex;
     flex: 2 2 90%;
-    margin: auto;
 }
 
 .arrow {
