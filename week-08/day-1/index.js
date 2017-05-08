@@ -22,6 +22,16 @@ function validator(list) {
         }
         if (list.every(isItNumber) === false ) {
             throw new Error('Pls add only numbers')
+        } else {
+            var goodList = [];
+            for (var i = 0; i < list.length; i++){
+                if (list[i] === 0 || !goodList.includes(list[i])) {
+                    goodList.push(list[i]);
+                } else {
+                    return false;
+                }
+            }
+            return true;
         }
     } else {
         return false;
