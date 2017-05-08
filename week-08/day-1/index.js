@@ -14,6 +14,7 @@ var sodokuList2 = [9,0,0,4,5,6,7,8];
 var sodokuList3 = [9,0,0,4,5,6,7,8,'n'];
 var sodokuList4 = [9,0,0,4,5,6,7,8,9];
 var sodokuList5 = [1,0,0,4,5,6,7,8,9];
+var sodokuList6 = [11,0,0,4,5,6,7,8,9];
 
 function validator(list) {
     if (list.length === 9) {
@@ -21,12 +22,16 @@ function validator(list) {
             return typeof element === 'number';
         }
         if (list.every(isItNumber) === false ) {
-            throw new Error('Pls add only numbers')
+            throw new Error('Pls add only numbers');
         } else {
             var goodList = [];
-            for (var i = 0; i < list.length; i++){
-                if (list[i] === 0 || !goodList.includes(list[i])) {
-                    goodList.push(list[i]);
+            for (var i = 0; i < list.length; i++) {
+                if (list[i] < 10 && list[i] >= 0) {
+                    if (list[i] === 0 || !goodList.includes(list[i])) {
+                        goodList.push(list[i]);
+                    } else {
+                        return false;
+                    }
                 } else {
                     return false;
                 }
@@ -59,5 +64,6 @@ test ('is it number?', function(t){
 test ('only one kind of number', function(t) {
     t.equal(validator(sodokuList4), false);
     t.equal(validator(sodokuList5), true);
+    t.equal(validator(sodokuList6), false);
     t.end();
 })
