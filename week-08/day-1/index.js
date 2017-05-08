@@ -15,12 +15,13 @@ var sodokuList2 = [9,0,0,4,5,6,7,8,'n'];
 
 function validator(list) {
     if (list.length === 9) {
-        list.forEach(function(element) {
-            if (typeof element !== 'number') {
-                throw new Error('only integers please');
-            }
-        });
-        return true;
+        function isItNumber(element) {
+            return typeof element === 'number';
+        }
+        if (list.every(isItNumber) === false ) {
+            throw new Error('Pls add only numbers')
+        }
+        return true
     } else {
         return false;
     }
