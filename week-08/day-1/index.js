@@ -29,6 +29,7 @@ function validator(list) {
                 if (list[i] < 10 && list[i] >= 0) {
                     if (list[i] === 0 || !goodList.includes(list[i])) {
                         goodList.push(list[i]);
+                        console.log(goodList);
                     } else {
                         return false;
                     }
