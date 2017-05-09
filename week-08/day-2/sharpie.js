@@ -11,9 +11,10 @@ function sharpie(color, width) {
     this.inkAmount = 100
 }
 
-// function use() {
-//     this.inkAmount -= this.width;
-// }
+function use() {
+    this.inkAmount -= this.width
+}
 
 let redSharpie = new sharpie('red', 5);
-console.log(redSharpie.color);
+(use.bind(redSharpie))();
+console.log(redSharpie.inkAmount);
