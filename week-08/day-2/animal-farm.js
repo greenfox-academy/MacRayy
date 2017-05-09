@@ -44,9 +44,10 @@ function farm() {
     },
 
     this.slaughter = function() {
-        animals.forEach(function(animal) {
-            
-        });
+        this.animals.sort(function (a, b) {
+            return a.hunger - b.hunger;
+        })
+        this.animals.shift();
     }
 }
 
@@ -54,5 +55,7 @@ let animalFarm = new farm();
 animalFarm.breed();
 animalFarm.breed();
 animalFarm.breed();
-console.log(animalFarm.animals);
-console.log(animalFarm.freePlaces);
+animalFarm.animals[1].eat();
+animalFarm.animals[1].eat();
+animalFarm.animals[1].eat();
+animalFarm.slaughter();
