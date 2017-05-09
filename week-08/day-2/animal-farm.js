@@ -16,17 +16,43 @@
 function animal() {
     this.hunger = 50,
     this.thirst = 50,
+
+    this.eat = function() {
+        this.hunger--
+    },
+
+    this.drink = function() {
+        this.thirst--
+    },
+
+    this.play = function() {
+        this.drink++,
+        this.hunger++
+    }
 }
 
-function eat() {
-    --this.hunger
+function farm() {
+    this.animals = [],
+    this.freePlaces = 4,
+
+    this.breed = function() {
+        if (this.freePlaces > 0 && this.freePlaces < 5) {
+            var newAnimal = new animal();
+            this.animals.push(newAnimal);
+            this.freePlaces--;
+        }
+    },
+
+    this.slaughter = function() {
+        animals.forEach(function(animal) {
+            
+        });
+    }
 }
 
-function drink() {
-    --this.thirst
-}
-
-function play() {
-    ++this.drink,
-    ++this.hunger
-}
+let animalFarm = new farm();
+animalFarm.breed();
+animalFarm.breed();
+animalFarm.breed();
+console.log(animalFarm.animals);
+console.log(animalFarm.freePlaces);
