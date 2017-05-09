@@ -12,3 +12,21 @@
 // Every farm has slots which defines the number of free places for animals
 // Every farm can breed() which creates a new animal if there's place for it
 // Every farm can slaughter() which removes the least hungry animal
+
+function animal() {
+    this.hunger = 50,
+    this.thirst = 50,
+}
+
+function eat() {
+    --this.hunger
+}
+
+function drink() {
+    --this.thirst
+}
+
+function play() {
+    ++this.drink,
+    ++this.hunger
+}
