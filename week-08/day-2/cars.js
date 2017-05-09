@@ -51,10 +51,18 @@ console.log(refuelFerrari(100));
 // And a method called ride, that takes a parameter celled km,
 // and increments kms with it, then drains the battery based on the consumpltion
 
+let tesla = {
+    type: 'nikola',
+    battery: 1000,
+    kms: 300,
+    consunption: 20,
+    ride: function (km) {
+        this.kms += km;
+        this.battery -= km * this.consunption;
+        return this.kms + this.battery;
+    }
+};
 
-
-
-
-// tesla.ride(36);
-// console.log(tesla.kms);
-// console.log(tesla.battery);
+console.log(tesla.ride(36));
+console.log(tesla.kms);
+console.log(tesla.battery);
