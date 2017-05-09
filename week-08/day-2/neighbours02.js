@@ -6,13 +6,21 @@
 
 const person = 2;
 
+// function amountOfBeer(person) {
+//   let j = person;
+//   let result = 0;
+//   for (let i = 0; i <= 3; i++) {
+//     result = i * j;
+//   }
+//   console.log('The result is:', result);
+// }
+
 function amountOfBeer(person) {
-  let j = person;
-  let result = 0;
-  for (let i = 0; i <= 3; i++) {
-    result = i * j;
+  var i = person;
+  for (let i = 0; i <= 4; i++) {
+    var j = i;
   }
-  console.log('The result is:', result);
+  console.log('The result is:', i + j);
 }
 
 amountOfBeer(person);
