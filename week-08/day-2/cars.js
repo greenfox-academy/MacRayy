@@ -38,9 +38,9 @@ function refuel(liters) {
   return this.fuel;
 }
 
-
-
-
+let refuelFerrari = refuel.bind(ferrari);
+console.log(refuelFerrari(52));
+console.log(refuelFerrari(100));
 
 // 3rd
 // Create a tesla object that has 3 properties
