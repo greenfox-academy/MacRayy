@@ -21,7 +21,7 @@ function valami() {
 
 let controller = function() {
     let display = new write();
-    this.candyCount = 2999;
+    this.candyCount = 4999;
     this.lollypopCount = 0;
     this.speed = 0;
 
@@ -42,11 +42,12 @@ let controller = function() {
     this.makeItRain = function() {
         if (this.lollypopCount >= 10) {
             this.lollypopCount -= 10;
-            this.speed++;
+            game.speed++;
             display.writeRain();
             clearInterval(interval);
             interval = setInterval(function () {
-                this.addCandy()
+                game.candyCount += game.speed
+                display.writeCandyCount();
             }.bind(this), 1000);
             display.refreshLollypop();
 
