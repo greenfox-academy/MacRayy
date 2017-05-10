@@ -20,7 +20,7 @@ function valami() {
 
 let controller = function() {
     let display = new write();
-    this.candyCount = 1000;
+    this.candyCount = 3000;
     this.lollypopCount = 0;
     this.speed = 0;
 
@@ -43,18 +43,29 @@ let controller = function() {
             this.lollypopCount -= 10;
             this.speed++;
             display.writeRain();
+            setInterval(function () {
+                this.addCandy()
+                display.writeCandyCount();
+            }.bind(this), 1000);
+            display.refreshLollypop();
         }
     }
 };
 
 let write = function() {
-     this.writeCandyCount = function() {
+    this.lollypopsIHave = ''
+
+    this.writeCandyCount = function() {
         candies.innerHTML = game.candyCount + ' 🍬';
     }
 
     this.writeLollypops = function() {
-        let lollypopsIHave = lollypops.innerHTML;
-        lollypops.innerHTML = lollypopsIHave + '🍭 ';
+        this.lollypopsIHave = lollypops.innerHTML;
+        lollypops.innerHTML = this.lollypopsIHave + '🍭 ';
+    }
+
+    this.refreshLollypop = function() {
+        lollypops.innerHTML = this.lollypopsIHave.slice(25);
     }
 
     this.writeRain = function() {
