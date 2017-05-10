@@ -6,7 +6,6 @@ let printsFruit = function(fruit) {
     console.log(fruit)
 };
 
-
 setTimeout(printsFruit, 0, 'apple');
 setTimeout(printsFruit, 2000, 'pear');
 setTimeout(printsFruit, 4000, 'mango');
