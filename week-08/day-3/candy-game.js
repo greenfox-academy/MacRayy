@@ -42,16 +42,24 @@ let controller = function() {
     this.makeItRain = function() {
         if (this.lollypopCount >= 10) {
             this.lollypopCount -= 10;
-            game.speed++;
+            this.speed++;
             display.writeRain();
+            display.refreshLollypops();
             clearInterval(interval);
             interval = setInterval(function () {
-                game.candyCount += game.speed
+                this.candyCount += this.speed
                 display.writeCandyCount();
             }.bind(this), 1000);
-            display.refreshLollypop();
-
+            setTimeout(function () {
+                this.stopRain();
+            }.bind(this), 5000);
         }
+    }
+
+    this.stopRain = function() {
+        this.speed--;
+        display.writeRain();
+        clearInterval(interval);
     }
 };
 
@@ -67,8 +75,9 @@ let write = function() {
         lollypops.innerHTML = this.lollypopsIHave + '🍭 ';
     }
 
-    this.refreshLollypop = function() {
+    this.refreshLollypops = function() {
         lollypops.innerHTML = this.lollypopsIHave.slice(27);
+        return this.lollypopsIHave.slice(27);
     }
 
     this.writeRain = function() {
