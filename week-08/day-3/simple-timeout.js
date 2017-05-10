@@ -2,8 +2,12 @@
 
 // Write a program that prints apple after 3 seconds.
 
-let printsApple = function() {
-    console.log('Apple');
-}
+let printsFruit = function(fruit) {
+    console.log(fruit)
+};
 
-setTimeout(printsApple, 3000);
+
+setTimeout(printsFruit, 0, 'apple');
+setTimeout(printsFruit, 2000, 'pear');
+setTimeout(printsFruit, 4000, 'mango');
+setTimeout(printsFruit, 6000, 'grape');
