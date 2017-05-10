@@ -14,26 +14,42 @@ const candyButton = document.querySelector('.create-candies');
 const lollypopButton= document.querySelector('.buy-lollypops');
 const rainButton = document.querySelector('.candy-machine');
 
-let candyCount = 1
-
 function valami() {
     console.log('valami');
 }
 
 let controller = function() {
     let display = new write();
+    this.candyCount = 1000;
+    this.lollypopCount = 0;
 
     this.addCandy = function() {
-        candyCount++;
+        this.candyCount++;
         display.writeCandyCount();
+    }
+
+    this.addLollypop = function() {
+        if (this.candyCount >= 100) {
+            this.candyCount -= 100;
+            this.lollypopCount++,
+            display.writeLollypops();
+            display.writeCandyCount();
+        }
     }
 };
 
 let write = function() {
      this.writeCandyCount = function() {
-        candies.innerHTML = candyCount;
+        candies.innerHTML = game.candyCount + ' 🍬';
     }
+
+    this.writeLollypops = function() {
+        let lollypopsIHave = lollypops.innerHTML;
+        lollypops.innerHTML = lollypopsIHave + '🍭 ';
+    }
+
 };
 
 let game = new controller();
-candyButton.addEventListener('click', game.addCandy);
+candyButton.addEventListener('click', game.addCandy.bind(game));
+lollypopButton.addEventListener('click', game.addLollypop.bind(game));
