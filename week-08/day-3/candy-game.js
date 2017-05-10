@@ -13,6 +13,7 @@ const speed = document.querySelector('.speed');
 const candyButton = document.querySelector('.create-candies');
 const lollypopButton= document.querySelector('.buy-lollypops');
 const rainButton = document.querySelector('.candy-machine');
+let interval;
 
 function valami() {
     console.log('valami');
@@ -43,11 +44,12 @@ let controller = function() {
             this.lollypopCount -= 10;
             this.speed++;
             display.writeRain();
-            setInterval(function () {
+            clearInterval(interval);
+            interval = setInterval(function () {
                 this.addCandy()
-                display.writeCandyCount();
             }.bind(this), 1000);
             display.refreshLollypop();
+
         }
     }
 };
