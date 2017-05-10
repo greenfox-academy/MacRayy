@@ -21,7 +21,7 @@ function valami() {
 
 let controller = function() {
     let display = new write();
-    this.candyCount = 3000;
+    this.candyCount = 2999;
     this.lollypopCount = 0;
     this.speed = 0;
 
@@ -55,7 +55,7 @@ let controller = function() {
 };
 
 let write = function() {
-    this.lollypopsIHave = ''
+    this.lollypopsIHave = '';
 
     this.writeCandyCount = function() {
         candies.innerHTML = game.candyCount + ' 🍬';
@@ -67,7 +67,7 @@ let write = function() {
     }
 
     this.refreshLollypop = function() {
-        lollypops.innerHTML = this.lollypopsIHave.slice(25);
+        lollypops.innerHTML = this.lollypopsIHave.slice(27);
     }
 
     this.writeRain = function() {
