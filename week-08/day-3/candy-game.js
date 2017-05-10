@@ -64,7 +64,7 @@ let controller = function() {
 };
 
 let write = function() {
-    this.lollypopsIHave = '';
+    this.lollypopsIHave = lollypops.innerHTML;
 
     this.writeCandyCount = function() {
         candies.innerHTML = game.candyCount + ' 🍬';
@@ -76,8 +76,8 @@ let write = function() {
     }
 
     this.refreshLollypops = function() {
-        lollypops.innerHTML = this.lollypopsIHave.slice(27);
-        return this.lollypopsIHave.slice(27);
+        this.lollypopsIHave = lollypops.innerHTML;
+        lollypops.innerHTML = this.lollypopsIHave.slice(30);
     }
 
     this.writeRain = function() {
