@@ -36,7 +36,16 @@ function greet3() {
     console.log('hallo 2');
 }
 
-// aszinkronitas
-greet1();
-setTimeout(greet2, 1000);
-greet3();
+// ASZINKRONITAS
+// greet1();
+// setTimeout(greet2, 3000);
+// greet3();
+// setTimeout(greet3, 1000);
+
+// CALLBACK FUNCTION
+function greet4(anything) { //callback function
+    anything()
+}
+
+// setTimeout(greet4, 2000, greet2)
+greet4(greet1)
