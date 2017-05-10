@@ -22,6 +22,7 @@ let controller = function() {
     let display = new write();
     this.candyCount = 1000;
     this.lollypopCount = 0;
+    this.speed = 0;
 
     this.addCandy = function() {
         this.candyCount++;
@@ -31,9 +32,17 @@ let controller = function() {
     this.addLollypop = function() {
         if (this.candyCount >= 100) {
             this.candyCount -= 100;
-            this.lollypopCount++,
+            this.lollypopCount++;
             display.writeLollypops();
             display.writeCandyCount();
+        }
+    }
+
+    this.makeItRain = function() {
+        if (this.lollypopCount >= 10) {
+            this.lollypopCount -= 10;
+            this.speed++;
+            display.writeRain();
         }
     }
 };
@@ -48,8 +57,12 @@ let write = function() {
         lollypops.innerHTML = lollypopsIHave + '🍭 ';
     }
 
+    this.writeRain = function() {
+        speed.innerHTML = game.speed + ' ⛱';
+    }
 };
 
 let game = new controller();
 candyButton.addEventListener('click', game.addCandy.bind(game));
 lollypopButton.addEventListener('click', game.addLollypop.bind(game));
+rainButton.addEventListener('click', game.makeItRain.bind(game));
