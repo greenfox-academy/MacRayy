@@ -20,17 +20,22 @@ let controller = function() {
                 var image = gifList.data[i].images.downsized_still.url;
                 imageList.push(image);
             }
-            createList(gifList)
+            createList(gifList);
         }
     }
 
     let createList = function(gifList) {
+
         let unorderdList = document.createElement('ul');
         body.appendChild(unorderdList);
         for (let i = 0; i < 16; i++) {
             let listItem = document.createElement('li');
             listItem.style.backgroundImage = 'url(' + gifList.data[i].images.downsized_still.url + ')';
-            unorderdList.appendChild(listItem)
+            listItem.addEventListener('mouseover', function() {
+                listItem.style.backgroundImage = 'url(' + gifList.data[i].images.downsized_medium.url + ')'});
+            listItem.addEventListener('mouseout', function() {
+                listItem.style.backgroundImage = 'url(' + gifList.data[i].images.downsized_still.url + ')'});
+        unorderdList.appendChild(listItem);
         }
     }
 }
