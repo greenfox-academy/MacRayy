@@ -10,6 +10,7 @@
 // Snippet
 // Publication date
 // Create a permalink to that article
+const body = document.querySelector('body');
 
 let ajax = function (url, callback) {
     let xhr = new XMLHttpRequest();
@@ -31,7 +32,25 @@ let ajax = function (url, callback) {
 let getNYTData = function() {
     const endpont = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=star+wars&api_key=2cccf4def763418d933793e8a1f01630';
     ajax(endpont, function(response) {
-        // displayNYTData(response)
+        displayNYTData(response);
+    });
+}
+
+let displayNYTData = function(relatedData) {
+    let articleData = relatedData.response.docs;
+    articleData.forEach(function(element) {
+        let title = document.createElement('a');
+        title.setAttribute('href', element.web_url);
+        title.innerHTML = element.headline.main;
+        body.appendChild(title);
+
+        let snippet = document.createElement('p');
+        snippet.innerHTML = element.snippet;
+        body.appendChild(snippet);
+
+        let date = document.createElement('p');
+        date.innerHTML = element.pub_date.slice(0, 10);
+        body.appendChild(date);
     });
 }
 
