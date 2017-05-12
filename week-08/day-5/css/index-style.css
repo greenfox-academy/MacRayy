@@ -1,3 +1,40 @@
 body {
-    background: tomato;
+    background: #ebebeb;
+}
+
+.page {
+    font-family: Arial, sans-serif;
+}
+
+.container__navbar {
+    padding: 30px;
+    padding-bottom: 0;
+    background: #3499af;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+.container__navbar--title {
+    color: #dddee0;
+    font-size: 3rem;
+}
+
+.container__main {
+    padding: 100px 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container__main--position {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.arrow.up {
+    background-image: url( "/Users/MrFox/OneDrive/greenfox/MacRayy/week-08/day-5/assets/upvote.png");
+}
+
+.arrow.down {
+    background-image: url( "assets/downvote.png");
 }
