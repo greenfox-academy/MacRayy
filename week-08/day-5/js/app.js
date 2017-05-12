@@ -42,11 +42,21 @@ let displayPost = function(relatedData) {
 
         let postContentClone = postClone.querySelector('.container__main--post');
         let postTitle = postClone.querySelector('.post-content');
+        let postData = postClone.querySelector('.post-data');
+        let up = postClone.querySelector('.up')
+        let down = postClone.querySelector('.down')
 
         postTitle.innerHTML = redditpost.title;
+        postData.innerHTML = 'submittet time ago by ' + redditpost.owner;
+
+        up.addEventListener('click', upvote)
 
     })
     post.style.display = 'none'
+}
+
+let upvote = function() {
+    
 }
 
 getData();
