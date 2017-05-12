@@ -2,6 +2,9 @@
 console.log('start');
 
 const body = document.querySelector('body');
+const page = document.querySelector('.page')
+let post = document.querySelector('.container__main');
+
 
 let ajax = function(url, callback) {
     let xhr = new XMLHttpRequest();
@@ -14,7 +17,7 @@ let ajax = function(url, callback) {
                 callback(rsp);
                 console.log(rsp);
             } else {
-                console.log(xhr.status);
+                console.log('error:' + xhr.status);
             }
         }
     }
@@ -23,11 +26,27 @@ let ajax = function(url, callback) {
 
 let getData = function() {
     let endpoint = 'https://time-radish.glitch.me/posts';
+    // let endpointRamin = 'http://10.27.99.43:8080/posts';
     ajax(endpoint, function(response) {
-        console.log('cool');
-        // displayNYTData(response);
+        console.log('inGetData');
+        displayPost(response);
     });
 
+}
+
+let displayPost = function(relatedData) {
+    let postsData = relatedData.posts;
+    postsData.forEach(function(redditpost) {
+        let postClone = post.cloneNode(true);
+        page.appendChild(postClone)
+
+        let postContentClone = postClone.querySelector('.container__main--post');
+        let postTitle = postClone.querySelector('.post-content');
+
+        postTitle.innerHTML = redditpost.title;
+
+    })
+    post.style.display = 'none'
 }
 
 getData();
