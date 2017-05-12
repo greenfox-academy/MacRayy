@@ -16,7 +16,7 @@ body {
 }
 
 .container__navbar--title {
-    color: #dddee0;
+    color: #ebebeb;
     font-size: 3rem;
 }
 
@@ -29,12 +29,54 @@ body {
 .container__main--position {
     padding: 5px 10px;
     text-align: center;
+    align-self: center;
+    font-size: 1.4rem
+}
+
+.counter {
+    padding: 5px;
+}
+
+.arrow {
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container__main--arrows {
+    padding: 5px;
 }
 
 .arrow.up {
-    background-image: url( "/Users/MrFox/OneDrive/greenfox/MacRayy/week-08/day-5/assets/upvote.png");
+    background-image: url( "assets/upvote.png");
 }
 
 .arrow.down {
     background-image: url( "assets/downvote.png");
+}
+
+.container__main--post {
+    padding: 10px;
+    line-height: 1.2rem;
+}
+
+.container__main--post a {
+    text-decoration: none;
+
+}
+
+.post-content {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #227ff1;
+}
+
+.post-data {
+    font-size: .8rem;
+    color: #888888;
+    padding-bottom: 10px;
+}
+
+.modify, .remove {
+    padding-right: 10px;
 }
