@@ -21,18 +21,26 @@ let sum = function(numList) {
 
     this.sumArray = function() {
         let summa = 0;
-        if (this.numList === []) {
-            return 0
-        } else {
-            for (let i = 0; i < this.numList.length; i++ ) {
-                summa += this.numList[i];
+        try {
+            if (this.numList === []) {
+                return 0
+            } else if (this.numList === null) {
+                throw new Error('it is not a list')
+            } else if (typeof this.numList === 'string') {
+                throw new Error('it is not a list')
+            } else {
+                for (let i = 0; i < this.numList.length; i++ ) {
+                    summa += this.numList[i];
+                }
             }
+            return summa;
+        } catch (err) {
+            return err.message;
         }
-        return summa;
     }
 }
 
-// let array = new sum([1,2,3]);
+// let array = new sum(null);
 // console.log(array.sumArray());
 
 module.exports = sum;
