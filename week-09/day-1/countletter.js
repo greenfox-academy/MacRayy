@@ -28,12 +28,8 @@ let countLetter = function(word) {
             }
             return allLetters;
         }, {});
-        console.log(dictionary);
         return dictionary;
     }
 }
-
-let word = new countLetter('terrier');
-word.isItString();
 
 module.exports = countLetter;
