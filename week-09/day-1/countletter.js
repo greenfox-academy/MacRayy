@@ -10,16 +10,30 @@ let countLetter = function(word) {
             if (typeof this.word !== 'string') {
                 throw new Error('it is not a word')
             } else {
-                countsLetters();
+                this.countsLetters();
             }
         } catch(err) {
-            return err.message
+            return err.message;
         }
     }
 
     this.countsLetters = function() {
-        return true;
+        let dictionary = {};
+        let lettersInWord = this.word.split('')
+        dictionary = lettersInWord.reduce(function (allLetters, letter) {
+            if (letter in allLetters) {
+                allLetters[letter]++;
+            } else {
+                allLetters[letter] = 1;
+            }
+            return allLetters;
+        }, {});
+        console.log(dictionary);
+        return dictionary;
     }
 }
+
+let word = new countLetter('terrier');
+word.isItString();
 
 module.exports = countLetter;

@@ -8,8 +8,8 @@ test('is it a string', function(t) {
     t.end();
 })
 
-// test('counts the letters in a string', function(t) {
-//     let word = new countLetter('terrier');
-//     t.equal(word.countsLetters(), {t: 1, e: 2, r: 3, i:1, });
-//     t.end();
-// })
+test('counts the letters in a string', function(t) {
+    let word = new countLetter('terrier');
+    t.deepEqual(word.countsLetters(), {t: 1, e: 2, r: 3, i:1, });
+    t.end();
+})
