@@ -26,4 +26,4 @@ let printStr = function(str) {
     console.log(str);
 }
 
-addString('f', 'g', printStr);
+addString('f', '3', printStr);
