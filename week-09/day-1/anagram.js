@@ -6,7 +6,7 @@ let areAnagramms = function(word1, word2) {
     this.word1 = word1;
     this.word2 = word2;
 
-    this.anagramm = function() {
+    this.anagrammLength = function() {
         if (this.word1.length === this.word2.length) {
             return true;
         } else {
@@ -14,8 +14,5 @@ let areAnagramms = function(word1, word2) {
         }
     }
 }
-
-// let a = new areAnagramms('dog', 'cat');
-// console.log(a.anagramm());
 
 module.exports = areAnagramms;
