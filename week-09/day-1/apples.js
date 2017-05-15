@@ -11,3 +11,11 @@
 // Change the expected value to make the test failing
 // Run the test
 // Fix the returned value to make the test succeeding again
+
+let getApple = function(str) {
+    return str;
+}
+
+getApple('apple')
+
+module.exports = getApple;
