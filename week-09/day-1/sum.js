@@ -21,14 +21,18 @@ let sum = function(numList) {
 
     this.sumArray = function() {
         let summa = 0;
-        for (let i = 0; i < this.numList.length; i++ ) {
-            summa += this.numList[i];
+        if (this.numList === []) {
+            return 0
+        } else {
+            for (let i = 0; i < this.numList.length; i++ ) {
+                summa += this.numList[i];
+            }
         }
         return summa;
     }
 }
 
-let array = new sum([1,2,3]);
-console.log(array.sumArray());
+// let array = new sum([1,2,3]);
+// console.log(array.sumArray());
 
 module.exports = sum;

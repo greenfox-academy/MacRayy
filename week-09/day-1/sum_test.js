@@ -7,3 +7,9 @@ test('testWithNumbers', function(t) {
     t.equal(testSum.sumArray(), 6);
     t.end();
 });
+
+test('testWithEmptyList', function(t) {
+    let testSum = new sum([])
+    t.equal(testSum.sumArray(), 0)
+    t.end();
+})
