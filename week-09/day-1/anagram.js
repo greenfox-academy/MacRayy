@@ -17,8 +17,8 @@ let areAnagramms = function(word1, word2) {
     this.anagrammLetters = function() {
         let wordList1 = [];
         let wordList2 = [];
-        wordList1 = this.word1.split('').sort();
-        wordList2 = this.word2.split('').sort();
+        wordList1 = this.word1.toLowerCase().split('').sort();
+        wordList2 = this.word2.toLowerCase().split('').sort();
         let sortedword1 = wordList1.join();
         let sortedeord2 = wordList2.join();
 

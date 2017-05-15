@@ -15,3 +15,9 @@ test('same Letters', function(t) {
     t.equal(anagramm2.anagrammLetters(), true)
     t.end();
 });
+
+test('uppercase', function(t) {
+    let anagramm1 = new areAnagramms('Dog', 'God');
+    t.equal(anagramm1.anagrammLetters(), true);
+    t.end();
+})
