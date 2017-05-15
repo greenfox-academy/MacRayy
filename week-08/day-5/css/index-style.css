@@ -4,15 +4,17 @@ body {
 
 .page {
     font-family: Arial, sans-serif;
+    padding-top: 100px;
 }
 
 .container__navbar {
     padding: 30px;
-    padding-bottom: 0;
+    padding-bottom: 0px;
     background: #3499af;
     position: fixed;
     right: 0;
     left: 0;
+    top: 0;
 }
 
 .container__navbar--title {
@@ -21,7 +23,7 @@ body {
 }
 
 .container__main {
-    padding: 100px 30px;
+    padding: 20px 30px 10px;
     display: flex;
     justify-content: flex-start;
 }
@@ -45,6 +47,7 @@ body {
 
 .container__main--arrows {
     padding: 5px;
+    align-self: center;
 }
 
 .arrow.up {
