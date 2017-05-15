@@ -24,10 +24,8 @@ let sum = function(numList) {
         try {
             if (this.numList === []) {
                 return 0
-            } else if (this.numList === null) {
-                throw new Error('it is not a list')
-            } else if (typeof this.numList === 'string') {
-                throw new Error('it is not a list')
+            } else if (this.numList === null || typeof this.numList === 'string') {
+                throw new Error('it is not a list');
             } else {
                 for (let i = 0; i < this.numList.length; i++ ) {
                     summa += this.numList[i];
