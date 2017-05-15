@@ -1,3 +1,11 @@
 'use strict'
 const test = require('tape');
-const anagramms = require('./anagramm.js')
+const areAnagramms = require('./anagram.js');
+
+test('sameLength', function(t) {
+    let anagramm1 = new areAnagramms('dog', 'cat');
+    t.equal(anagramm1.anagramm(), true);
+    let anagramm2 = new areAnagramms('dog', 'gold');
+    t.equal(anagramm2.anagramm(), false);
+    t.end();
+});
