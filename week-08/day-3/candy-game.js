@@ -15,17 +15,16 @@ const lollypopButton= document.querySelector('.buy-lollypops');
 const rainButton = document.querySelector('.candy-machine');
 let interval;
 
-function valami() {
-    console.log('valami');
-}
-
 let controller = function() {
+    // console.log(this);
+
     let display = new write();
     this.candyCount = 4999;
     this.lollypopCount = 0;
     this.speed = 0;
 
     this.addCandy = function() {
+        console.log(this);
         this.candyCount++;
         display.writeCandyCount();
     }
@@ -86,6 +85,6 @@ let write = function() {
 };
 
 let game = new controller();
-candyButton.addEventListener('click', game.addCandy.bind(game));
+candyButton.addEventListener('click', game.addCandy)//.bind(game));
 lollypopButton.addEventListener('click', game.addLollypop.bind(game));
 rainButton.addEventListener('click', game.makeItRain.bind(game));
