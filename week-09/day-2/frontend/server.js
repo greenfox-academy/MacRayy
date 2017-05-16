@@ -1,6 +1,8 @@
 'use strict'
 
 const express = require('express')
+const sum = require('./calculate.js')
+const factorio = require('./calculate.js')
 
 const app = express();
 
@@ -40,12 +42,18 @@ app.get('/greeter', function(req, res) {
 });
 
 app.get('/appenda/:a', (req, res) => {
-    const a = (req.params.a);
-    console.log(req.params);
-    console.log(req.params.a);
-    res.send ( {
-        appended: a + 'a'
+    res.send( {
+        appended: req.params.a + 'a'
     });
+});
+
+app.get('/dountil/:what', (req, res) => {
+    console.log(req.params);
+    console.log(req.params.what);
+
+    res.send( {
+
+    })
 });
 
 app.listen(8080, function functionName() {
