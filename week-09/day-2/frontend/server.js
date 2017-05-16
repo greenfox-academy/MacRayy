@@ -39,6 +39,15 @@ app.get('/greeter', function(req, res) {
     }
 });
 
+app.get('/appenda/:a', (req, res) => {
+    const a = (req.params.a);
+    console.log(req.params);
+    console.log(req.params.a);
+    res.send ( {
+        appended: a + 'a'
+    });
+});
+
 app.listen(8080, function functionName() {
     console.log('server is running');
 });
