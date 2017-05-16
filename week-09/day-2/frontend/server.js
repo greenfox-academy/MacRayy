@@ -51,11 +51,7 @@ app.get('/appenda/:a', (req, res) => {
 
 
 app.post('/dountil/:what', (req, res) => {
-    console.log(req.body.until)
-    console.log(req.params);
     if (req.params.what === 'sum') {
-        console.log('in sum');
-        console.log(sum(req.body.until));
         res.send( {
             result: sum(req.body.until)
         });
