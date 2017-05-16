@@ -1,4 +1,3 @@
-'use strict'
 /**
  * Created by aze on 2017.05.09..
  */
