@@ -1,8 +1,9 @@
 'use strict'
 
-const express = require('express')
-const sum = require('./calculate.js')
-const factorio = require('./calculate.js')
+const express = require('express');
+const bodyParser = require('body-parser');
+const sum = require('./sum.js');
+const factorio = require('./factorio.js');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.get('/', function(req, res) {
 });
 
 app.use('/assets', express.static('assets'));
+app.use(bodyParser.json())
 
 app.get('/doubling', function(req, res) {
     if (req.query === {} || req.query.input === undefined) {
@@ -47,13 +49,25 @@ app.get('/appenda/:a', (req, res) => {
     });
 });
 
-app.get('/dountil/:what', (req, res) => {
+
+app.post('/dountil/:what', (req, res) => {
+    console.log(req.body.until)
     console.log(req.params);
-    console.log(req.params.what);
-
-    res.send( {
-
-    })
+    if (req.params.what === 'sum') {
+        console.log('in sum');
+        console.log(sum(req.body.until));
+        res.send( {
+            result: sum(req.body.until)
+        });
+    } else if (req.params.what === 'factor') {
+        res.send( {
+            result: factorio(req.body.until)
+        });
+    } else {
+        res.send( {
+            error: "Please provide a number!"
+        });
+    }
 });
 
 app.listen(8080, function functionName() {

@@ -9,6 +9,7 @@
   "author": "zsolt",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2"
   }
 }
