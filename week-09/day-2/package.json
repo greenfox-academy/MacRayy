@@ -9,6 +9,7 @@
   "author": "Zsolt",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "five": "^0.8.0"
   }
 }
