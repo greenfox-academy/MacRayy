@@ -66,6 +66,6 @@ app.post('/dountil/:what', (req, res) => {
     }
 });
 
-app.listen(8080, function functionName() {
+app.listen(8080, () => {
     console.log('server is running');
 });
