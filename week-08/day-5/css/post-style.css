@@ -11,13 +11,22 @@ body {
     padding: 30px;
     padding-bottom: 0px;
     background: #3499af;
+    color: #ebebeb;
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .container__navbar--title {
-    color: #ebebeb;
+    padding-right: 20px;
     font-size: 3rem;
+}
+
+.container__navbar--link {
+    padding: 27px 10px 0px;
+    text-decoration: none;
+    align-self: baseline;
 }
