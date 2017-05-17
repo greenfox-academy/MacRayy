@@ -3,17 +3,17 @@ console.log('start');
 
 const body = document.querySelector('body');
 const page = document.querySelector('.page')
-let post = document.querySelector('.container__main');
+const post = document.querySelector('.container__main');
 
 
-let ajax = function(url, callback) {
-    let xhr = new XMLHttpRequest();
+const ajax = function(url, callback) {
+    const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.setRequestHeader('Accept', 'application/json')
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                let rsp = JSON.parse(xhr.response);
+                const rsp = JSON.parse(xhr.response);
                 callback(rsp);
                 console.log(rsp);
             } else {
@@ -24,8 +24,8 @@ let ajax = function(url, callback) {
     xhr.send();
 }
 
-let getData = function() {
-    let endpoint = 'https://time-radish.glitch.me/posts';
+const getData = function() {
+    const endpoint = 'https://time-radish.glitch.me/posts';
     // let endpointRamin = 'http://10.27.99.43:8080/posts';
     ajax(endpoint, function(response) {
         console.log('inGetData');
@@ -34,29 +34,31 @@ let getData = function() {
 
 }
 
-let displayPost = function(relatedData) {
+const displayPost = function(relatedData) {
     let postsData = relatedData.posts;
-    postsData.forEach(function(redditpost) {
+    postsData.forEach((redditpost) => {
         let postClone = post.cloneNode(true);
         page.appendChild(postClone)
 
         let postContentClone = postClone.querySelector('.container__main--post');
         let postTitle = postClone.querySelector('.post-content');
         let postData = postClone.querySelector('.post-data');
-        let up = postClone.querySelector('.up')
-        let down = postClone.querySelector('.down')
+        let up = postClone.querySelector('.up');
+        let down = postClone.querySelector('.down');
+
+        postTitle.setAttribute('href', redditpost.href);
 
         postTitle.innerHTML = redditpost.title;
         postData.innerHTML = 'submittet time ago by ' + redditpost.owner;
 
-        up.addEventListener('click', upvote)
+        up.addEventListener('click', upvote);
 
     })
     post.style.display = 'none'
 }
 
-let upvote = function() {
-    
+const upvote = function() {
+
 }
 
 getData();
