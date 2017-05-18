@@ -37,19 +37,8 @@ app.get('/', (req, res) => {
 
 
 app.get('/table', (req, res) => {
-    const tableData = 'book_name, aut_name, cate_descrip, pub_name, book_price';
-    const bookTable = 'book_mast';
-    const authorTable = 'author';
-    const categoryTable = 'category';
-    const publisherTable = 'publisher';
-    const authorID = 'book_mast.aut_id = author.aut_id';
-    const categoryID = 'book_mast.cate_id = category.cate_id';
-    const publisherID = 'book_mast.pub_id = publisher.pub_id';
-    const sql = 'SELECT ? FROM ? INNER JOIN ? ON ? INNER JOIN ? ON ? INNER JOIN ? ON ?'
-    const sqlData = [tableData, bookTable, authorTable, authorID, categoryTable, categoryID, publisherTable, publisherID]
     let HTML = '<table>';
-    // conn.query('SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast INNER JOIN author ON book_mast.aut_id = author.aut_id INNER JOIN category ON book_mast.cate_id = category.cate_id INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id', (err, rows) => {
-    conn.query(sql, sqlData, (err, rows) => {
+    conn.query('SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast INNER JOIN author ON book_mast.aut_id = author.aut_id INNER JOIN category ON book_mast.cate_id = category.cate_id INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id', (err, rows) => {
         console.log('table');
         if (err) {
             console.log('Error: ', err);
@@ -66,6 +55,45 @@ app.get('/table', (req, res) => {
         res.send(HTML)
     })
 
+});
+
+app.get('/table/books', (req, res) => {
+    let sql = 'SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast INNER JOIN author ON book_mast.aut_id = author.aut_id INNER JOIN category ON book_mast.cate_id = category.cate_id INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id';
+    let queryParts = [];
+    let result = '<table>';
+    if (req.query.category) {
+        let category = 'cate_descrip = ' + '"' + req.query.category + '"';
+        queryParts.push(category);
+    }
+    if (req.query.publisher) {
+        let publisher = 'aut_name = ' + '"' + req.query.publisher + '"';
+        queryParts.push(publisher);
+    }
+    if (req.query.plt) {
+
+    }
+    if (req.query.pgt) {
+
+    }
+    if (queryParts.length !== 0) {
+        sql += ' WHERE ' + queryParts.join(' AND ');
+    }
+    console.log('\n' + sql + '\n');
+    conn.query(sql, (err, rows) => {
+        if (err) {
+            console.log('Error: ', err);
+        } else {
+            rows.forEach(row => {
+                result += '<tr><td>' + row.book_name + '</td>';
+                result += '<td>' + row.aut_name + '</td>';
+                result += '<td>' + row.cate_descrip + '</td>';
+                result += '<td>' + row.pub_name + '</td>';
+                result += '<td>' + row.book_price + '</td></tr>';
+            });
+        }
+        result += '</table>';
+        res.send(result);
+    });
 });
 
 app.listen(3000, () => {
