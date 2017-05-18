@@ -2,7 +2,7 @@
 // Write a function, that takes a string as an argument and returns a dictionary with all letters in the string as keys, and numbers as values that shows how many occurrences there are.
 // Create a test for that.
 
-let countLetter = function(word) {
+const countLetter = function(word) {
     this.word = word;
 
     this.isItString = function() {
@@ -20,7 +20,7 @@ let countLetter = function(word) {
     this.countsLetters = function() {
         let dictionary = {};
         let lettersInWord = this.word.split('')
-        dictionary = lettersInWord.reduce(function (allLetters, letter) {
+        dictionary = lettersInWord.reduce((allLetters, letter) => {
             if (letter in allLetters) {
                 allLetters[letter]++;
             } else {
