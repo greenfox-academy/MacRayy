@@ -30,3 +30,13 @@ body {
     text-decoration: none;
     align-self: baseline;
 }
+
+.container__submit {
+    padding: 20px 30px 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container__form--input {
+    display: flex;
+}

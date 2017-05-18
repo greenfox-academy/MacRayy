@@ -17,18 +17,25 @@
             </nav>
 
             <main class="container__submit">
-                <h1>Submit to the page</h1>
 
-                <form class="url" action="index.html" method="post">
-                    <label for="url">url</label>
-                    <input type="text" name="url" value="url">
-                    <label for="title">title</label>
-                    <input type="text" name="title" value="title">
-                    <label for="options">options</label>
-                    <input type="checkbox" name="anonymous">
+                <form class="container__form" action="index.html" method="post">
+                    <h1>Submit to the page</h1>
+                    <div class="container__form--input">
+                        <label for="url">url</label>
+                        <input type="text" name="url" value="url">
+                    </div>
+                    <div class="container__form--input">
+                        <label for="title">title</label>
+                        <input type="text" name="title" value="title">
+                    </div>
+                    <div class="container__form--input">
+                        <label for="options">options</label>
+                        <input type="checkbox" name="anonymous">
+                    </div>
                 </form>
+
+                <button class="submit">submit</button>
             </main>
-            <button class="submit">submit</button>
         </div>
         <script></script>
     </body>

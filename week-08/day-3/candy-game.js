@@ -85,6 +85,6 @@ let write = function() {
 };
 
 let game = new controller();
-candyButton.addEventListener('click', game.addCandy)//.bind(game));
+candyButton.addEventListener('click', game.addCandy).bind(game));
 lollypopButton.addEventListener('click', game.addLollypop.bind(game));
 rainButton.addEventListener('click', game.makeItRain.bind(game));
