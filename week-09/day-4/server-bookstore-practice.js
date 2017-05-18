@@ -66,14 +66,16 @@ app.get('/table/books', (req, res) => {
         queryParts.push(category);
     }
     if (req.query.publisher) {
-        let publisher = 'aut_name = ' + '"' + req.query.publisher + '"';
+        let publisher = 'pub_name = ' + '"' + req.query.publisher + '"';
         queryParts.push(publisher);
     }
     if (req.query.plt) {
-
+        let plt = 'book_price < ' + '"' + req.query.plt + '"';
+        queryParts.push(plt);
     }
     if (req.query.pgt) {
-
+        let pgt = 'book_price > ' + '"' + req.query.pgt + '"';
+        queryParts.push(pgt);
     }
     if (queryParts.length !== 0) {
         sql += ' WHERE ' + queryParts.join(' AND ');
