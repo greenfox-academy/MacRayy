@@ -6,9 +6,10 @@ const cors = require('cors');
 
 const app = express();
 
-let result = {"post": 0};
+let result = {"posts": 0};
 
 app.use(cors())
+app.use(bodyParser.json())
 
 const conn = mysql.createConnection({
     host: 'localhost',
@@ -32,16 +33,24 @@ app.get('/hello', (req, res) => {
     res.send(hello());
 });
 
-app.get('/posts', (req, res) => {
+app.get('/redditmain', (req, res) => {
     conn.query('SELECT * FROM posts', (err, rows) => {
         if (err) {
             console.log('Error: ', err);
         } else {
-            result = rows;
+            result.posts = rows;
         }
         res.send(result);
     });
 });
+
+app.post('/redditmain', (req, res) => {
+    let timestamp = Math.floor(Date.now() / 1000);
+    conn.query('INSERT INTO Reddit (href, timestamp, title) VALUES ("' + req.body.url + '", "' + timestamp + '", "' + req.body.title + '")', (err, rows) => {
+
+    });
+});
+// ([column], [column]) VALUES ('[value]', [value]')
 
 const port = 3000;
 app.listen(port, () => {
