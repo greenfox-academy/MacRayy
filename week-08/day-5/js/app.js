@@ -25,8 +25,9 @@ const ajax = function(url, callback) {
 }
 
 const getData = function() {
-    const endpoint = 'https://time-radish.glitch.me/posts';
+    // const endpoint = 'https://time-radish.glitch.me/posts';
     // let endpointRamin = 'http://10.27.99.43:8080/posts';
+    const endpoint = 'http://localhost:3000/redditmain'
     ajax(endpoint, function(response) {
         console.log('inGetData');
         displayPost(response);
@@ -34,8 +35,8 @@ const getData = function() {
 
 }
 
-const displayPost = function(relatedData) {
-    let postsData = relatedData.posts;
+const displayPost = function(redditData) {
+    let postsData = redditData.posts;
     postsData.forEach((redditpost) => {
         let postClone = post.cloneNode(true);
         page.appendChild(postClone)
