@@ -1,10 +1,14 @@
 'use strict'
-
 const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+
+let result = {"post": 0};
+
+app.use(cors())
 
 const conn = mysql.createConnection({
     host: 'localhost',
@@ -28,8 +32,7 @@ app.get('/hello', (req, res) => {
     res.send(hello());
 });
 
-app.get('/post', (req, res) => {
-    let result = {"post": 0};
+app.get('/posts', (req, res) => {
     conn.query('SELECT * FROM posts', (err, rows) => {
         if (err) {
             console.log('Error: ', err);
