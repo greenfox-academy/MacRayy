@@ -1,32 +1,32 @@
 'use strict'
 
-var TennisGame3 = function(p1N, p2N) {
-    this.p2 = 0;
-    this.p1 = 0;
+var TennisGame3 = function(p1Name, p2Name) {
+    this.p2Score = 0;
+    this.p1Score = 0;
 
-    this.p1N = p1N;
-    this.p2N = p2N;
+    this.p1Name = p1Name;
+    this.p2Name = p2Name;
 };
 
 TennisGame3.prototype.getScore = function() {
-    let s;
-    if ((this.p1 < 4 && this.p2 < 4) && (this.p1 + this.p2 < 6)) {
+    let score;
+    if ((this.p1Score < 4 && this.p2Score < 4) && (this.p1Score + this.p2Score < 6)) {
         let p = ["Love", "Fifteen", "Thirty", "Forty"];
-        s = p[this.p1];
-        return (this.p1 === this.p2) ? s + "-All" : s + "-" + p[this.p2];
+        score = p[this.p1Score];
+        return (this.p1Score === this.p2Score) ? score + "-All" : score + "-" + p[this.p2Score];
     } else {
-        if (this.p1 === this.p2)
+        if (this.p1Score === this.p2Score)
             return "Deuce";
-        s = (this.p1 > this.p2) ? this.p1N : this.p2N;
-        return ((this.p1 - this.p2) * (this.p1 - this.p2) === 1) ? "Advantage " + s : "Win for " + s;
+        score = (this.p1Score > this.p2Score) ? this.p1Name : this.p2Name;
+        return ((this.p1Score - this.p2Score) * (this.p1Score - this.p2Score) === 1) ? "Advantage " + score : "Win for " + score;
     }
 };
 
 TennisGame3.prototype.wonPoint = function(playerName) {
     if (playerName == "player1")
-        this.p1 += 1;
+        this.p1Score += 1;
     else
-        this.p2 += 1;
+        this.p2Score += 1;
 
 };
 
