@@ -23,11 +23,11 @@ TennisGame3.prototype.getScore = function() {
 };
 
 TennisGame3.prototype.wonPoint = function(playerName) {
-    if (playerName == "player1")
-        this.p1Score += 1;
-    else
-        this.p2Score += 1;
-
+    if (playerName === "player1") {
+        this.p1Score++;
+    } else {
+        this.p2Score++;
+    }
 };
 
 if (typeof window === "undefined") {
