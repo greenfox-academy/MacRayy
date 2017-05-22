@@ -9,16 +9,16 @@ var TennisGame3 = function(p1N, p2N) {
 };
 
 TennisGame3.prototype.getScore = function() {
-    var s;
+    let s;
     if ((this.p1 < 4 && this.p2 < 4) && (this.p1 + this.p2 < 6)) {
-        var p = ["Love", "Fifteen", "Thirty", "Forty"];
+        let p = ["Love", "Fifteen", "Thirty", "Forty"];
         s = p[this.p1];
-        return (this.p1 == this.p2) ? s + "-All" : s + "-" + p[this.p2];
+        return (this.p1 === this.p2) ? s + "-All" : s + "-" + p[this.p2];
     } else {
-        if (this.p1 == this.p2)
+        if (this.p1 === this.p2)
             return "Deuce";
-        s = this.p1 > this.p2 ? this.p1N : this.p2N;
-        return ((this.p1 - this.p2) * (this.p1 - this.p2) == 1) ? "Advantage " + s : "Win for " + s;
+        s = (this.p1 > this.p2) ? this.p1N : this.p2N;
+        return ((this.p1 - this.p2) * (this.p1 - this.p2) === 1) ? "Advantage " + s : "Win for " + s;
     }
 };
 
