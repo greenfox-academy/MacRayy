@@ -63,25 +63,26 @@ TennisGame1.prototype.getScoreOverFour  = function() {
 
 TennisGame1.prototype.getScoreBelowThree = function() {
     let scoreBelowThree = '';
+    let scoreTags = ['Love', 'Fifteen', 'Thirty', 'Forty']
     for (let i = 1; i < 3; i++) {
         if (i === 1) {
             scoreBelowThree = this.m_score1;
         } else {
             scoreBelowThree += '-'
-            switch (this.m_score2) {
-                case 0:
-                scoreBelowThree += "Love";
-                break;
-                case 1:
-                scoreBelowThree += "Fifteen";
-                break;
-                case 2:
-                scoreBelowThree += "Thirty";
-                break;
-                case 3:
-                scoreBelowThree += "Forty";
-                break;
-            }
+        }
+        // switch (scoreBelowThree) {
+        //     case 0:
+        //     scoreBelowThree += "Love";
+        //     break;
+        //     case 1:
+        //     scoreBelowThree += "Fifteen";
+        //     break;
+        //     case 2:
+        //     scoreBelowThree += "Thirty";
+        //     break;
+        //     case 3:
+        //     scoreBelowThree += "Forty";
+        //     break;
         }
     }
     console.log(scoreBelowThree);
