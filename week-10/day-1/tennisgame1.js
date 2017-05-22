@@ -45,10 +45,9 @@ TennisGame1.prototype.getScore = function() {
             score = "Win for player2";
         }
     } else {
+        tempScore = this.m_score1;
         for (let i = 1; i < 3; i++) {
-            if (i === 1) {
-                tempScore = this.m_score1;
-            } else {
+            if (i > 1) {
                 score += "-";
                 tempScore = this.m_score2;
             }
