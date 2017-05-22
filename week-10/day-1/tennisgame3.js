@@ -1,3 +1,5 @@
+'use strict'
+
 var TennisGame3 = function(p1N, p2N) {
     this.p2 = 0;
     this.p1 = 0;
