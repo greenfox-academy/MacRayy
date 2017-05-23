@@ -81,7 +81,7 @@ body {
 }
 
 .container__rigthtop {
-    flex: 1 1 20%;
+    flex: 1 1 15%;
     padding: 20px 10px 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -99,11 +99,8 @@ body {
     margin-top: 10px;
 }
 
-.container__rigthtop-album-info {
-}
-
 .container__rigthbottom {
-    flex: 1 1 80%;
+    flex: 1 1 85%;
     overflow-y: scroll;
 }
 
@@ -112,4 +109,52 @@ body {
     flex: 1 1 20%;
     background-color: #FFFFFF;
     border-radius: 0px 0px 10px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar {
+    box-sizing: border-box;
+    padding: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.rewind {
+    background-image: url(rewind.svg);
+    margin-left: 10px;
+}
+
+.play-pause {
+    background-image: url(play.svg);
+}
+
+.forward {
+    background-image: url(forward.svg);
+}
+
+.remaining-time, .total-time {
+        align-self: center;
+}
+
+.status {
+    flex:0 0 40%;
+}
+
+.status audio {
+
+}
+
+.shuffle {
+    background-image: url(shuffle.svg);
+}
+
+.volume-ikon {
+    background-image: url(volume.svg);
+    padding: 5px;
+}
+
+.volume-level {
+    flex:0 0 20%;
 }
