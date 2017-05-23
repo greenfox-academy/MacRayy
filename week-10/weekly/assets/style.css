@@ -2,9 +2,9 @@ body {
     background: grey;
 }
 
-.container__main {
+.container__player {
     font-family: 'Oxygen', sans-serif;
-    color: #dbdbdb;
+    color: #5b5b5b;
     width: 700px;
     margin: 100px auto;
     display: flex;
@@ -14,7 +14,7 @@ body {
     border-radius: 5px;
 }
 
-.container__player {
+.container__main {
     height: 350px;
     flex: 1 1 80%;
     background-color: #F5F5F5;
@@ -26,25 +26,26 @@ body {
     flex: 1 1 45%;
 }
 
-.container__playlists--head {
+.container__lefttop--head {
     display: flex;
     justify-content: flex-start;
 }
 
-.container__logo {
-    padding: 10px;
+.container__lefttop--logo {
+    padding: 10px 10px 10px 20px;
     flex: 1 1 55%;
     display: flex;
     flex-direction: column;
 }
 
 .logo {
-    max-width: 85px
+    max-width: 85px;
+    padding-bottom: 20px;
 }
 
-.container__logo--info {
+.container__lefttop--info {
     color: #4C4F52;
-    padding-top: 10px;
+    padding-top: 10px 10px 10px 20px;
     font-weight: bold;
     flex-direction: row;
     display: inline-flex;
@@ -52,25 +53,58 @@ body {
     font-size: 20px;
 }
 
-
 .artwork {
-    flex: 1 1 45%;
+    flex: 1 1 55%;
     background-image: url(music-placeholder.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.container__rigth {
-    flex: 1 1 55%;
-    border-left: 2px solid #b0b0b0;
-}
-
 .list-item {
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
     color: #5b5b5b;
     display: flex;
     justify-content: space-between;
+}
+
+.x {
+    font-size: xx-large;
+    line-height: 3px;
+}
+
+.container__rigth {
+    flex: 1 1 55%;
+    border-left: 2px solid #b0b0b0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container__rigthtop {
+    flex: 1 1 20%;
+    padding: 20px 10px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.album-title {
+    font-weight: bold;
+    color: #4C4F52;
+    font-size: 20px;
+}
+
+.artist {
+    color: #A3A3A3;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.container__rigthtop-album-info {
+}
+
+.container__rigthbottom {
+    flex: 1 1 80%;
+    overflow-y: scroll;
 }
 
 .container__nav {
