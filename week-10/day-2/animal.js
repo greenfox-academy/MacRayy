@@ -19,3 +19,17 @@ dog.say();
 const wolf = new Animal('howl');
 
 wolf.say();
+
+
+class Bird {
+    constructor(sound) {
+        this.sound = sound;
+    }
+}
+
+Bird.prototype.say = function() {
+    console.log(this.sound);
+};
+
+const owl = new Bird('hooo');
+owl.say()
