@@ -5,6 +5,7 @@
         <title>Music Player</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link rel="stylesheet" href="assets/style.css">
     </head>
@@ -15,7 +16,7 @@
                     <div class="container__playlists--head">
                         <div class="container__logo">
                             <img class="logo" src="assets/foxplayer.png" alt="foxplayer logo">
-                            <div class="container__logo--playlist">
+                            <div class="container__logo--info">
                                 <h1 class="playlists">Playlists</h1>
                                 <p class="add-playlist">+</p>
                             </div>
@@ -24,8 +25,9 @@
                     </div>
 
                     <ul class="container__playlists">
-                        <li>All tracks</li>
-                        <li>Favorites</li>
+                        <li class="list-item all-tracks">All tracks</li>
+                        <li class="list-item favorite">Favorites</li>
+                        <li class="list-item">My playlist <span>X</span></li>
                     </ul>
                 </aside>
 

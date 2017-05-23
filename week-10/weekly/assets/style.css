@@ -3,14 +3,15 @@ body {
 }
 
 .container__main {
-    font-family: Arial, sans-serif;
-    color: #838486;
+    font-family: 'Oxygen', sans-serif;
+    color: #dbdbdb;
     width: 700px;
     margin: 100px auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     box-shadow: 7px 7px 38px -12px rgba(48,48,48,0.73);
+    border-radius: 5px;
 }
 
 .container__player {
@@ -18,7 +19,7 @@ body {
     flex: 1 1 80%;
     background-color: #F5F5F5;
     display: flex;
-    justify-content: flex-start;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .container__left {
@@ -32,7 +33,7 @@ body {
 
 .container__logo {
     padding: 10px;
-    flex: 1 1 60%;
+    flex: 1 1 55%;
     display: flex;
     flex-direction: column;
 }
@@ -41,18 +42,19 @@ body {
     max-width: 85px
 }
 
-.container__logo--playlist {
+.container__logo--info {
     color: #4C4F52;
     padding-top: 10px;
     font-weight: bold;
     flex-direction: row;
     display: inline-flex;
     justify-content: space-between;
+    font-size: 20px;
 }
 
+
 .artwork {
-    flex: 1 1 40%;
-    /*min-height: 130px;*/
+    flex: 1 1 45%;
     background-image: url(music-placeholder.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -61,10 +63,19 @@ body {
 
 .container__rigth {
     flex: 1 1 55%;
+    border-left: 2px solid #b0b0b0;
+}
+
+.list-item {
+    padding: 10px;
+    color: #5b5b5b;
+    display: flex;
+    justify-content: space-between;
 }
 
 .container__nav {
     height: 60px;
     flex: 1 1 20%;
     background-color: #FFFFFF;
+    border-radius: 0px 0px 10px 10px;
 }
