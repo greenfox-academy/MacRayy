@@ -8,7 +8,7 @@
 function createRectangle(a, b) {
     function getArea() {
         let area = a * b;
-        return area;
+        return a * b;
     }
 
     function getCircumference() {
@@ -20,7 +20,7 @@ function createRectangle(a, b) {
         getArea,
         getCircumference
     }
-};
+}
 
 const brick = createRectangle(20, 40);
 console.log(brick.getArea());

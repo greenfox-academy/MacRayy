@@ -33,3 +33,17 @@ Bird.prototype.say = function() {
 
 const owl = new Bird('hooo');
 owl.say()
+
+
+function createPredator(sound) {
+    function say() {
+        return sound;
+    }
+
+    return {
+        say
+    }
+}
+
+const lion = createPredator('roar');
+console.log(lion.say());
