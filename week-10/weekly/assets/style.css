@@ -1,3 +1,70 @@
 body {
-    background: tomato;
+    background: grey;
+}
+
+.container__main {
+    font-family: Arial, sans-serif;
+    color: #838486;
+    width: 700px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 7px 7px 38px -12px rgba(48,48,48,0.73);
+}
+
+.container__player {
+    height: 350px;
+    flex: 1 1 80%;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container__left {
+    flex: 1 1 45%;
+}
+
+.container__playlists--head {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container__logo {
+    padding: 10px;
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    max-width: 85px
+}
+
+.container__logo--playlist {
+    color: #4C4F52;
+    padding-top: 10px;
+    font-weight: bold;
+    flex-direction: row;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.artwork {
+    flex: 1 1 40%;
+    /*min-height: 130px;*/
+    background-image: url(music-placeholder.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container__rigth {
+    flex: 1 1 55%;
+}
+
+.container__nav {
+    height: 60px;
+    flex: 1 1 20%;
+    background-color: #FFFFFF;
 }
