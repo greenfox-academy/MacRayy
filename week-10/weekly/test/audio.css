@@ -1,3 +1,9 @@
 body {
     background: tomato;
 }
+
+.audio {
+    width: 400px;
+    height: 100px;
+    padding: 20px;
+}
