@@ -101,7 +101,7 @@ body {
 
 .container__rigthbottom {
     flex: 1 1 85%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .container__nav {
@@ -111,6 +111,35 @@ body {
     border-radius: 0px 0px 10px 10px;
     display: flex;
     justify-content: space-around;
+    position: relative;
+}
+
+.audio {
+    position: absolute;
+    width: 100%;
+    align-self: center;
+}
+
+.audio::-webkit-media-controls, .audio::-webkit-media-controls-panel {
+	background: transparent;
+}
+
+.audio::-webkit-media-controls-play-button {
+    margin: 38px;
+}
+
+.audio::-webkit-media-controls-current-time-display {
+    position: absolute;
+    left: 115px;
+}
+
+.audio::-webkit-media-controls-time-remaining-display {
+    position: absolute;
+    right: 212px;
+}
+
+.audio::-webkit-media-controls-timeline {
+    margin: 0px 120px 0px 45px;
 }
 
 .navbar {
@@ -126,9 +155,9 @@ body {
     margin-left: 10px;
 }
 
-.play-pause {
+/*.play-pause {
     background-image: url(play.svg);
-}
+}*/
 
 .forward {
     background-image: url(forward.svg);
@@ -139,7 +168,7 @@ body {
 }
 
 .status {
-    flex:0 0 40%;
+    flex:0 0 45%;
 }
 
 .status audio {
@@ -150,10 +179,10 @@ body {
     background-image: url(shuffle.svg);
 }
 
-.volume-ikon {
+/*.volume-ikon {
     background-image: url(volume.svg);
     padding: 5px;
-}
+}*/
 
 .volume-level {
     flex:0 0 20%;
