@@ -1,4 +1,6 @@
 'use strict'
 
-getPlaylists();
-getTracks();
+const ajax = createAjax();
+const view = createView();
+ajax.getPlaylists();
+ajax.getTracks();
