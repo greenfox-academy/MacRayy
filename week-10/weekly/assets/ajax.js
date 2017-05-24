@@ -1,6 +1,6 @@
 'use strict'
 
-
+const playlist = document.querySelector('.container__playlists');
 
 const ajax = (url, method, callback) => {
     const xhr = new XMLHttpRequest();
@@ -23,8 +23,14 @@ const getPlaylists = () => {
     const endpoint = 'http://localhost:3000/playlists';
     ajax(endpoint, 'GET', (response) => {
         console.log('I got the data');
-        // display(response);
+        renderPlaylists(response);
     });
 };
+
+const renderPlaylists = function(response) {
+    let output = Mustache.render('{{#tracks}} <li class="list-item">{{title}}<span class="x">&#x02A2F;</span></li> {{/tracks}}', {tracks: response});
+    playlist.innerHTML = output;
+};
+
 
 getPlaylists();
