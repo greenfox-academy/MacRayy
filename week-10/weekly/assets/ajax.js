@@ -11,7 +11,7 @@ const ajax = (url, method, callback) => {
             if (xhr.status === 200) {
                 const rsp = JSON.parse(xhr.response);
                 callback(rsp);
-                console.log(rsp);
+                // console.log(rsp);
             } else {
                 console.log('error:' + xhr.status);
             }
@@ -40,10 +40,15 @@ const renderPlaylists = function(response) {
 };
 
 const renderTracks = function(response) {
-    const outputTracks = Mustache.render('{{#tracks}} <li class="list-item">{{title}} ({{artist}})<span>{{duration}}</span></li> {{/tracks}}', {tracks: response});
-    console.log(outputTracks);
-    tracklist.innerHTML = outputTracks;
-}
+    const tracks = {tracks: response}
+    Handlebars.registerHelper("inc", function(value, options){
+        return parseInt(value) + 1;
+    });
+    const outputTracks = '{{#tracks}} <li class="list-item">{{inc @index}} {{title}} ({{artist}})<span>{{duration}}</span></li> {{/tracks}}';
+    const compiledTracks = Handlebars.compile(outputTracks);
+    const generatedHTML = compiledTracks(tracks);
+    tracklist.innerHTML = generatedHTML;
+};
 
 getPlaylists();
 getTracks();
