@@ -1,6 +1,7 @@
 'use strict'
 
 const playlist = document.querySelector('.container__playlists');
+const tracklist = document.querySelector('.tracklist');
 
 const ajax = (url, method, callback) => {
     const xhr = new XMLHttpRequest();
@@ -22,15 +23,27 @@ const ajax = (url, method, callback) => {
 const getPlaylists = () => {
     const endpoint = 'http://localhost:3000/playlists';
     ajax(endpoint, 'GET', (response) => {
-        console.log('I got the data');
         renderPlaylists(response);
     });
 };
 
-const renderPlaylists = function(response) {
-    let output = Mustache.render('{{#tracks}} <li class="list-item">{{title}}<span class="x">&#x02A2F;</span></li> {{/tracks}}', {tracks: response});
-    playlist.innerHTML = output;
+const getTracks = () => {
+    const endpoint = 'http://localhost:3000/playlist-tracks';
+    ajax(endpoint, 'GET', (response) => {
+        renderTracks(response);
+    });
 };
 
+const renderPlaylists = function(response) {
+    const outputPlaylists = Mustache.render('{{#playlists}} <li class="list-item"> {{title}}<span class="x">&#x02A2F;</span></li> {{/playlists}}', {playlists: response});
+    playlist.innerHTML = outputPlaylists;
+};
+
+const renderTracks = function(response) {
+    const outputTracks = Mustache.render('{{#tracks}} <li class="list-item">{{title}} ({{artist}})<span>{{duration}}</span></li> {{/tracks}}', {tracks: response});
+    console.log(outputTracks);
+    tracklist.innerHTML = outputTracks;
+}
 
 getPlaylists();
+getTracks();
