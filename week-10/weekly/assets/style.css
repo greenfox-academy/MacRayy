@@ -187,3 +187,12 @@ body {
 .volume-level {
     flex:0 0 20%;
 }
+
+/*.mrhyde {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    right: 7px;
+    top: 20px;
+}*/
