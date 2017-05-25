@@ -25,6 +25,8 @@ const createView = function () {
     };
 
     return {
+        album,
+        artist,
         renderPlaylists,
         renderTracks
     }
