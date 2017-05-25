@@ -9,7 +9,7 @@ const createAjax = function () {
                 if (xhr.status === 200) {
                     const rsp = JSON.parse(xhr.response);
                     callback(rsp);
-                    // console.log(rsp);
+                    console.log(rsp);
                 } else {
                     console.log('error:' + xhr.status);
                 }
@@ -18,22 +18,7 @@ const createAjax = function () {
         xhr.send();
     };
 
-    const getPlaylists = () => {
-        const endpoint = 'http://localhost:3000/playlists';
-        ajax(endpoint, 'GET', (response) => {
-            view.renderPlaylists(response);
-        });
-    };
-
-    const getTracks = () => {
-        const endpoint = 'http://localhost:3000/playlist-tracks';
-        ajax(endpoint, 'GET', (response) => {
-            view.renderTracks(response);
-        });
-    };
-
     return {
-        getPlaylists,
-        getTracks
-    }
+        ajax
+    };
 };
