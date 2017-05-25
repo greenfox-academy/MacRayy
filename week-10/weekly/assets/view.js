@@ -3,6 +3,8 @@
 const createView = function () {
     const playlist = document.querySelector('.container__playlists');
     const tracklist = document.querySelector('.tracklist');
+    const album = document.querySelector('.album-title')
+    const artist = document.querySelector('.artist')
 
     const renderPlaylists = function(response) {
         const outputPlaylists = Mustache.render('{{#playlists}} <li class="list-item"> {{title}}<span class="x">&#x02A2F;</span></li> {{/playlists}}', {playlists: response});
@@ -18,10 +20,11 @@ const createView = function () {
         const compiledTracks = Handlebars.compile(outputTracks);
         const generatedHTML = compiledTracks(tracks);
         tracklist.innerHTML = generatedHTML;
+
     };
 
     return {
         renderPlaylists,
         renderTracks
     }
-}
+};
