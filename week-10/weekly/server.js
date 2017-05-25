@@ -22,10 +22,6 @@ conn.connect(err => {
 
 let playlistsData;
 let tracksData;
-// const tracksData = [
-// 	{ "id": 21, "title": "Halahula", "artist": "Untitled artist", "duration": 545, "path": "assets/talisco-run/04 Follow Me.mp3" },
-// 	{ "id": 412, "title": "No sleep till Brooklyn", "artist": "Beastie Boys", "duration": 312.12, "path": "assets/talisco-run/03 The Keys.mp3" }
-// ];
 
 app.use('/assets', express.static('assets'));
 
