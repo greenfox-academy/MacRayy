@@ -20,14 +20,20 @@ const createView = function () {
         const compiledTracks = Handlebars.compile(outputTracks);
         const generatedHTML = compiledTracks(tracks);
         tracklist.innerHTML = generatedHTML;
-        album.innerText = response[0].album;
-        artist.innerText = response[0].artist;
+        renderAlbumAndArtist(response[0].album, response[0].artist);
     };
+
+    const renderAlbumAndArtist = function(albumTitle, artistName) {
+        album.innerText = albumTitle;
+        artist.innerText = artistName;
+    };
+
 
     return {
         album,
         artist,
         renderPlaylists,
-        renderTracks
+        renderTracks,
+        renderAlbumAndArtist
     }
 };

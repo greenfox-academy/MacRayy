@@ -2,20 +2,20 @@
 
 const AudioControll = function() {
 
-    const addsEventListeners = function(tracksData) {
+    const addsEventListeners = function(tracksData, renderHead) {
         const allTracks = document.querySelectorAll('.tracklist .track');
         allTracks.forEach((track) => {
             track.addEventListener('click', () => {
                 const trackIndex = Array.from(track.parentNode.children).indexOf(track);
-                console.log(tracksData[trackIndex].path);
-                changeSong(tracksData, trackIndex);
+                changeSong(tracksData, trackIndex, renderHead);
             });
         });
     };
 
-    const changeSong = function(tracksData, trackIndex) {
+    const changeSong = function(tracksData, trackIndex, renderHead) {
         const audio = document.querySelector('.audio');
         audio.setAttribute('src', tracksData[trackIndex].path);
+        renderHead(tracksData[trackIndex].album, tracksData[trackIndex].artist);
     };
 
     return {

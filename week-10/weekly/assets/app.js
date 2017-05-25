@@ -17,8 +17,12 @@ const createController = function() {
         const endpoint = 'http://localhost:3000/playlist-tracks';
         ajax.ajax(endpoint, 'GET', (response) => {
             view.renderTracks(response);
-            audio.addsEventListeners(response);
+            audio.addsEventListeners(response, renderHead);
         });
+    };
+
+    const renderHead = function(albumTitle, artistName) {
+        view.renderAlbumAndArtist(albumTitle, artistName);
     };
 
     return {
