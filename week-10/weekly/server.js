@@ -5,6 +5,9 @@ const mysql = require('mysql');
 
 const app = express();
 
+let playlistsData;
+let tracksData;
+
 const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -19,9 +22,6 @@ conn.connect(err => {
   }
   console.log("Connection established\n");
 });
-
-let playlistsData;
-let tracksData;
 
 app.use('/assets', express.static('assets'));
 
