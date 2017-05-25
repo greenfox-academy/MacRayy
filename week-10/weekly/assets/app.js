@@ -3,6 +3,7 @@
 const createController = function() {
     const ajax = createAjax();
     const view = createView();
+    const audio =  AudioControll();
 
     const getPlaylists = () => {
         const endpoint = 'http://localhost:3000/playlists';
@@ -16,6 +17,7 @@ const createController = function() {
         const endpoint = 'http://localhost:3000/playlist-tracks';
         ajax.ajax(endpoint, 'GET', (response) => {
             view.renderTracks(response);
+            audio.addsEventListeners();
         });
     };
 

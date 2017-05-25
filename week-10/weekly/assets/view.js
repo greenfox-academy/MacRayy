@@ -7,7 +7,7 @@ const createView = function () {
     const artist = document.querySelector('.artist');
 
     const renderPlaylists = function(response) {
-        const outputPlaylists = Mustache.render('{{#playlists}} <li class="list-item"> {{title}}<span class="x">&#x02A2F;</span></li> {{/playlists}}', {playlists: response});
+        const outputPlaylists = Mustache.render('{{#playlists}} <li class="list-item playlist"> {{title}}<span class="x">&#x02A2F;</span></li> {{/playlists}}', {playlists: response});
         playlist.innerHTML = outputPlaylists;
     };
 
@@ -16,7 +16,7 @@ const createView = function () {
         Handlebars.registerHelper("inc", (value, options) => {
             return parseInt(value) + 1;
         });
-        const outputTracks = '{{#tracks}} <li class="list-item">{{inc @index}} {{title}} ({{artist}})<span>{{duration}}</span></li> {{/tracks}}';
+        const outputTracks = '{{#tracks}} <li class="track list-item">{{inc @index}} {{title}} ({{artist}})<span>{{duration}}</span></li> {{/tracks}}';
         const compiledTracks = Handlebars.compile(outputTracks);
         const generatedHTML = compiledTracks(tracks);
         tracklist.innerHTML = generatedHTML;
