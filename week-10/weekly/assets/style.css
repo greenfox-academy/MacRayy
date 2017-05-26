@@ -206,3 +206,24 @@ body {
     right: 7px;
     top: 20px;
 }*/
+
+.container__create-playlist {
+    font-family: 'Oxygen', sans-serif;
+    position: absolute;
+    left: 182px;
+    top: 223px;
+    padding: 20px;
+    border: 2px solid #ECECEC;
+    color: #F5F5F5;
+    background-color: #4C4F52;
+    display: inline-block;
+    z-index: -1;
+}
+
+label {
+    padding-right: 20px;
+}
+button {
+    margin-left: 20px;
+    cursor: pointer;
+}

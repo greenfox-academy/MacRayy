@@ -6,8 +6,12 @@ const createController = function() {
     const audio =  AudioControll();
 
     view.addPlaylist.addEventListener('click', () => {
-        console.log('happy');
+        view.displayForm();
     });
+
+    view.button.addEventListener('click', () => {
+        view.hideForm();
+    })
 
     const getPlaylists = () => {
         const endpoint = 'http://localhost:3000/playlists';

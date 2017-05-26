@@ -6,6 +6,8 @@ const createView = function () {
     const album = document.querySelector('.album-title');
     const artist = document.querySelector('.artist');
     const addPlaylist = document.querySelector('.add-playlist');
+    const form = document.querySelector('.container__create-playlist')
+    const button = document.querySelector('button');
 
     const renderPlaylists = function(response) {
         const outputPlaylists = Mustache.render('{{#playlists}} <li class="list-item playlist"> {{title}}<span class="x">&#x02A2F;</span></li> {{/playlists}}', {playlists: response});
@@ -29,13 +31,23 @@ const createView = function () {
         artist.innerText = artistName;
     };
 
+    const displayForm = function() {
+        form.style.zIndex = '10';
+    }
+
+    const hideForm = function() {
+        form.style.zIndex = '-1';
+    }
 
     return {
+        button,
         addPlaylist,
         album,
         artist,
         renderPlaylists,
         renderTracks,
-        renderAlbumAndArtist
+        renderAlbumAndArtist,
+        displayForm,
+        hideForm
     }
 };
