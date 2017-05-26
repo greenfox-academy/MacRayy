@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 let playlistsData;
 let tracksData;
@@ -55,7 +55,17 @@ app.get('/playlist-tracks', (req, res) => {
 });
 
 app.post('/create-playlist', (req, res) => {
-
+    conn.query('INSERT INTO Playlists (title, system) VALUES ("' + req.body.newPlaylist + ', 0");', (err, rows) => {
+        conn.query('SELECT * FROM Playlists', (err, rows) => {
+            if (err) {
+                console.log('Error: ', err);
+            } else {
+                playlistsData = rows;
+            }
+            res.send(playlistsData);
+        });
+    });
+    console.log('playlist added to server');
 });
 
 app.listen(3000, () => {
