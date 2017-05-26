@@ -10,7 +10,7 @@ const createController = function() {
     });
 
     view.button.addEventListener('click', () => {
-        postPlaylist();
+        postPlaylist(getInput);
         view.hideForm();
     })
 
@@ -30,13 +30,21 @@ const createController = function() {
         });
     };
 
-    const postPlaylist = function() {
-        console.log(view.input.value);
+    const postPlaylist = function(input) {
+        const endpoint = 'http://localhost:3000/create-playlist';
+        ajax.ajax(endpoint, 'POST', (response) => {
+            view.renderPlaylists(response);
+        }, input);
     }
 
     const setAlbumTitle = function(albumTitle, artistName) {
         view.renderAlbumAndArtist(albumTitle, artistName);
     };
+
+    const getInput = function() {
+        const newPlaylist = view.input;
+        return newPlaylist
+    }
 
     return {
         getPlaylists,
