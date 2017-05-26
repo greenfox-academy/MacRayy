@@ -4,15 +4,18 @@ const createController = function() {
     const ajax = createAjax();
     const view = createView();
     const audio =  AudioControll();
+    let newPlaylist = view.input.value;
 
     view.addPlaylist.addEventListener('click', () => {
         view.displayForm();
     });
 
     view.button.addEventListener('click', () => {
-        postPlaylist(getInput);
+        console.log(view.input.value);
+        console.log(newPlaylist);
+        postPlaylist(view.input.value);
         view.hideForm();
-    })
+    });
 
     const getPlaylists = () => {
         const endpoint = 'http://localhost:3000/playlists';
@@ -27,13 +30,14 @@ const createController = function() {
         ajax.ajax(endpoint, 'GET', (response) => {
             view.renderTracks(response);
             audio.addClickToSong(response, setAlbumTitle);
+            console.log();
         });
     };
 
     const postPlaylist = function(input) {
         const endpoint = 'http://localhost:3000/create-playlist';
         ajax.ajax(endpoint, 'POST', (response) => {
-            view.renderPlaylists(response);
+            getPlaylists();
         }, input);
     }
 
@@ -41,10 +45,6 @@ const createController = function() {
         view.renderAlbumAndArtist(albumTitle, artistName);
     };
 
-    const getInput = function() {
-        const newPlaylist = view.input;
-        return newPlaylist
-    }
 
     return {
         getPlaylists,

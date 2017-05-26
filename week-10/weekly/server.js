@@ -55,15 +55,11 @@ app.get('/playlist-tracks', (req, res) => {
 });
 
 app.post('/create-playlist', (req, res) => {
-    conn.query('INSERT INTO Playlists (title, system) VALUES ("' + req.body.newPlaylist + ', 0");', (err, rows) => {
-        conn.query('SELECT * FROM Playlists', (err, rows) => {
-            if (err) {
-                console.log('Error: ', err);
-            } else {
-                playlistsData = rows;
-            }
-            res.send(playlistsData);
-        });
+    const newPlaylist = req.body.newPlaylist;
+    conn.query('INSERT INTO Playlists (title) VALUES ("' + newPlaylist + '");', (err, rows) => {
+        // console.log(req.body);
+        // console.log(req.body.newPlaylist);
+        res.send(playlistsData);
     });
     console.log('playlist added to server');
 });
