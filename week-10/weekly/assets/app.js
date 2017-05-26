@@ -10,6 +10,7 @@ const createController = function() {
     });
 
     view.button.addEventListener('click', () => {
+        postPlaylist();
         view.hideForm();
     })
 
@@ -28,6 +29,10 @@ const createController = function() {
             audio.addClickToSong(response, setAlbumTitle);
         });
     };
+
+    const postPlaylist = function() {
+        console.log(view.input.value);
+    }
 
     const setAlbumTitle = function(albumTitle, artistName) {
         view.renderAlbumAndArtist(albumTitle, artistName);

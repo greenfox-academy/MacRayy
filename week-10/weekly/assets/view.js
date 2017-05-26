@@ -8,6 +8,7 @@ const createView = function () {
     const addPlaylist = document.querySelector('.add-playlist');
     const form = document.querySelector('.container__create-playlist')
     const button = document.querySelector('button');
+    const input = document.querySelector('input');
 
     const renderPlaylists = function(response) {
         const outputPlaylists = Mustache.render('{{#playlists}} <li class="list-item playlist"> {{title}}<span class="x">&#x02A2F;</span></li> {{/playlists}}', {playlists: response});
@@ -40,6 +41,7 @@ const createView = function () {
     }
 
     return {
+        input,
         button,
         addPlaylist,
         album,

@@ -2,8 +2,11 @@
 
 const express = require('express');
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+app.use(bodyParser.json())
 
 let playlistsData;
 let tracksData;
@@ -49,6 +52,10 @@ app.get('/playlist-tracks', (req, res) => {
         }
         res.send(tracksData);
     });
+});
+
+app.post('/create-playlist', (req, res) => {
+
 });
 
 app.listen(3000, () => {
