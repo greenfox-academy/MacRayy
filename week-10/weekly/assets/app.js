@@ -5,6 +5,10 @@ const createController = function() {
     const view = createView();
     const audio =  AudioControll();
 
+    view.addPlaylist.addEventListener('click', () => {
+        console.log('happy');
+    });
+
     const getPlaylists = () => {
         const endpoint = 'http://localhost:3000/playlists';
         ajax.ajax(endpoint, 'GET', (response) => {
@@ -17,11 +21,11 @@ const createController = function() {
         const endpoint = 'http://localhost:3000/playlist-tracks';
         ajax.ajax(endpoint, 'GET', (response) => {
             view.renderTracks(response);
-            audio.addsEventListeners(response, renderAlbumTitle);
+            audio.addClickToSong(response, setAlbumTitle);
         });
     };
 
-    const renderAlbumTitle = function(albumTitle, artistName) {
+    const setAlbumTitle = function(albumTitle, artistName) {
         view.renderAlbumAndArtist(albumTitle, artistName);
     };
 

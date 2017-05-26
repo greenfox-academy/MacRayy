@@ -2,8 +2,20 @@
 
 const AudioControll = function() {
 
-    const addsEventListeners = function(tracksData, renderAlbumTitle) {
+    const audio = document.querySelector('.audio');
+
+
+    const addClickToSong = function(tracksData, renderAlbumTitle) {
         const allTracks = document.querySelectorAll('.tracklist .track');
+
+        audio.addEventListener('ended', (event) => {
+            allTracks.forEach((track) => {
+                const trackIndex = Array.from(track.parentNode.children).indexOf(track);
+                console.log(trackIndex);
+            });
+            // changeSong(tracksData);
+        });
+
         allTracks.forEach((track) => {
             track.addEventListener('click', () => {
                 const trackIndex = Array.from(track.parentNode.children).indexOf(track);
@@ -13,12 +25,11 @@ const AudioControll = function() {
     };
 
     const changeSong = function(tracksData, trackIndex, renderAlbumTitle) {
-        const audio = document.querySelector('.audio');
         audio.setAttribute('src', tracksData[trackIndex].path);
         renderAlbumTitle(tracksData[trackIndex].album, tracksData[trackIndex].artist);
     };
 
     return {
-        addsEventListeners
+        addClickToSong
     }
 };
