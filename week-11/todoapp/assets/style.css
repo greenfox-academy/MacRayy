@@ -1,3 +1,16 @@
 body {
     background: grey;
 }
+
+.container__main {
+    width: 60vw;
+    margin: auto;
+    background: green;
+    display: flex;
+    flex-direction: column;
+}
+
+.container__main--title {
+    margin: 50px;
+    text-align: center;
+}
