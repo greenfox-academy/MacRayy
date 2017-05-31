@@ -1,0 +1,83 @@
+.container__main {
+    width: 65vw;
+    margin: 10vh auto;
+    background: #f9f9f9;
+    color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.54);
+}
+
+.container__main--title {
+    margin: 50px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.form {
+    display: flex;
+}
+
+.input, .button {
+    font-size: 1.5rem;
+}
+
+.input {
+    flex: 1 1 90%;
+    border-radius: 5px 0 0 5px;
+}
+
+.button {
+    background: #1f1f1f;
+    color: #f9f9f9;
+    flex-grow: 1 1 10%;
+    border-radius: 0 5px 5px 0;
+}
+
+.container__main--todo {
+    margin: auto;
+    line-height: 2.2rem;
+}
+
+.container__main--list {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons {
+    width: 60px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.del, .unchecked, .checked {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.del {
+    background-image: url(del.svg);
+}
+
+.unchecked {
+    background-image: url(dot.svg);
+}
+
+.checked {
+    background-image: url(check.svg);
+}
