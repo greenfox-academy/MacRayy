@@ -1,5 +1,5 @@
 .container__main {
-    width: 65vw;
+    max-width: 40vw;
     margin: 10vh auto;
     background: #f9f9f9;
     color: #1f1f1f;
