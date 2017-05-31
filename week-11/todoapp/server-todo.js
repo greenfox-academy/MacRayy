@@ -34,6 +34,22 @@ app.get('/todos', (req, res) => {
     });
 });
 
+app.get('/todos/:id', (req, res) => {
+    const todoID = req.params.id;
+    conn.query('SELECT * FROM todos WHERE ID = ?', todoID, (err, rows) => {
+        if (err) {
+            console.log('Error: ', err);
+        } else {
+            todos = rows;
+            if (todos.length > 0) {
+                res.send(todos);
+            } else {
+                res.send('No such todo')
+            }
+        }
+    });
+});
+
 app.listen(3000, () => {
     console.log('server is running');
 });
