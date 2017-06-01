@@ -4,6 +4,9 @@ const createDisplay = function() {
     const todoList = document.querySelector('#todo-list');
     const addedTodo = document.querySelector('.input');
     const addTodo = document.querySelector('.button');
+    const checked = document.querySelector('.checked');
+    const unchecked = document.querySelector('.unchecked');
+    const del = document.querySelector('.del');
 
     const renderTodos = (response) => {
         const todos = {todos: response};
@@ -16,6 +19,9 @@ const createDisplay = function() {
     return {
         addedTodo,
         addTodo,
+        checked,
+        unchecked,
+        del,
         renderTodos
     };
 };
