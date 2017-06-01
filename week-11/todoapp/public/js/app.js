@@ -2,12 +2,12 @@
 
 const createController = function() {
     const ajax = createAjax();
+    const view = createDisplay();
 
     const getTodos = () => {
         const endpoint = 'http://localhost:3000/todos';
         ajax.ajax(endpoint, 'GET', (response) => {
-            console.log('I got the data');
-            // view.renderPlaylists(response);
+            view.renderTodos(response);
         });
     };
 
