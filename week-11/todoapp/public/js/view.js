@@ -5,8 +5,7 @@ const createDisplay = function() {
 
     const renderTodos = (response) => {
         const todos = {todos: response};
-        const displayTodos = '{{#todos}} <li class="list-item">{{todo_name}}<p class="icons"><span class="del"></span><span class="unchecked"></span></p></li> {{/todos}}'
-        console.log(displayTodos);
+        const displayTodos = '{{#todos}} {{#if completed}} <li class="list-item">{{todo_name}}<p class="icons"><span class="del"></span><span class="checked"></span></p></li> {{else}} <li class="list-item">{{todo_name}}<p class="icons"><span class="del"></span><span class="unchecked"></span></p></li> {{/if}} {{/todos}}'
         console.log(todoList);
         const compiledTodos = Handlebars.compile(displayTodos);
         const generatedHTML = compiledTodos(todos);
