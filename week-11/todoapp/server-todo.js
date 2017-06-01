@@ -8,6 +8,7 @@ const app = express();
 
 let todos
 
+app.use(bodyParser.json());
 app.use('/public', express.static('public'));
 
 const conn = mysql.createConnection({
@@ -54,6 +55,16 @@ app.get('/todos/:id', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('server is running');
+app.post('/post-todo', (req, res) => {
+    const newTodo = req.body.newTodo;
+    conn.query('INSERT INTO todos (todo-name) VALUES ?', newTodo, (err, rows) => {
+        if (err) {
+            console.log('Error: ', err);
+        } else {
+            res.send('New todo added');
+            console.log('New todo added');
+        }
+    });
 });
+
+app.listen(3000, () => console.log('server is running'));
