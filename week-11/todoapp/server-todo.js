@@ -28,7 +28,7 @@ conn.connect(err => {
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
 
 app.get('/todos', (req, res) => {
-    conn.query('SELECT * FROM todos', (err, rows) => {
+    conn.query('SELECT * FROM todos ORDER BY completed DESC', (err, rows) => {
         if (err) {
             console.log('Error: ', err);
         } else {
