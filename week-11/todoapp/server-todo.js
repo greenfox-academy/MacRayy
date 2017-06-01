@@ -57,12 +57,11 @@ app.get('/todos/:id', (req, res) => {
 
 app.post('/post-todo', (req, res) => {
     const newTodo = req.body.newTodo;
-    conn.query('INSERT INTO todos (todo-name) VALUES ?', newTodo, (err, rows) => {
+    conn.query('INSERT INTO todos (todo_name) VALUES ("' + newTodo + '")', (err, rows) => {
         if (err) {
             console.log('Error: ', err);
         } else {
-            res.send('New todo added');
-            console.log('New todo added');
+            res.send(todos);
         }
     });
 });
