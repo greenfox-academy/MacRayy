@@ -8,6 +8,8 @@ const app = express();
 
 let todos
 
+app.use('/public', express.static('public'));
+
 const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -22,6 +24,8 @@ conn.connect(err => {
   }
   console.log("Connection established\n");
 });
+
+app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
 
 app.get('/todos', (req, res) => {
     conn.query('SELECT * FROM todos', (err, rows) => {
