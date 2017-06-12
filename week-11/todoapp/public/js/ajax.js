@@ -7,14 +7,14 @@ const createAjax = function () {
         let message = {
             newTodo: input
         };
-        xhr.setRequestHeader('Content-Type', 'application/json')
-        console.log(message);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        // console.log(message);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                        const rsp = JSON.parse(xhr.response);
-                        callback(rsp);
-                        console.log(rsp);
+                    const rsp = JSON.parse(xhr.response);
+                    callback(rsp);
+                    console.log(rsp);
                 } else {
                     console.log('error:' + xhr.status);
                 }

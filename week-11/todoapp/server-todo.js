@@ -66,4 +66,15 @@ app.post('/post-todo', (req, res) => {
     });
 });
 
+app.put('/update-todo', (req, res) => {
+    const update = req.body.TodoID;
+    conn.query('UPDATE todos SET completed = "1" WHERE id = ?'), update, (err, rows) => {
+        if (err) {
+            console.log('Error: ', err);
+        } else {
+            res.send(todos);
+        }
+    }
+});
+
 app.listen(3000, () => console.log('server is running'));
