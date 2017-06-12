@@ -1,0 +1,14 @@
+{
+  "name": "week-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "poker-validator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tape": "^4.6.3"
+  }
+}
