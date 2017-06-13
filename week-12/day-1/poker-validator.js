@@ -10,12 +10,27 @@ const CreateValidator = function(black, white) {
         }
     };
 
+    const getResult = () => {
+        result = '';
+        const blackCards = blackHand.reduce((allCards, card) => {
+            allCards.push({number: card[0], suit: card[1]});
+            return allCards;
+        }, []);
+        const whiteCards = whiteHand.reduce((allCards, card) => {
+            allCards.push({number: card[0], suit: card[1]});
+            return allCards;
+        }, []);
+
+        return result
+    };
+
     return {
-        getLength
+        getLength,
+        getResult
     };
 };
 
-// const poker = CreateValidator('2H 3D 5S 9C KD' , '2C 3H 4S 8C AH');
-// console.log(poker.getLength());
+const poker = CreateValidator('2H 3H 5H 6H 9H' , '2C 3H 4S 8C AH');
+console.log(poker.getResult());
 
 module.exports = CreateValidator;

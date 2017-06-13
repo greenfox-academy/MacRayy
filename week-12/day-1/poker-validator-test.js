@@ -9,8 +9,8 @@ test('correct number of cards in hands', (t) => {
     t.end();
 });
 
-test('black is royal flush', (t) => {
-    const validatorTest = validator('TH JH DH KH AH' , '2C 3H 4S 8C AH');
-    t.equal(validatorTest.getResult(), 'Black Wins. - with Royal Flush');
+test('black is flush', (t) => {
+    const validatorTest = validator('2H 3H 5H 6H 9H' , '2C 3H 4S 8C AH');
+    t.equal(validatorTest.getResult(), 'Black Wins. - with Flush');
     t.end();
 });
