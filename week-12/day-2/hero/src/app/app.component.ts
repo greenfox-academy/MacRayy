@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Hero } from './hero';
 import { HEROES } from './heroes';
 
