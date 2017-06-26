@@ -1,5 +1,5 @@
 # MacRayy
-Bajusz - greenfox exercises
+greenfox exercises
 
 [Zodiac Cohort syllabus](https://github.com/greenfox-academy/zodiac-syllabus)
 
