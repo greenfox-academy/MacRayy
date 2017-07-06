@@ -1,27 +1,242 @@
 import React, { Component } from 'react';
-import { AppRegistry, Image, StyleSheet, Text, View, TextInput } from 'react-native';
+import { AppRegistry, Image, StyleSheet, Text, View, TextInput, Button, Alert, ScrollView, FlatList, SectionList, ActivityIndicator, ListView } from 'react-native';
 
-export default class PizzaTranslator extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {text: ''}
+export default class Movies extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true
+    }
+  }
+
+  componentDidMount() {
+    return fetch('https://facebook.github.io/react-native/movies.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        this.setState({
+          isLoading: false,
+          dataSource: ds.cloneWithRows(responseJson.movies),
+        }, function() {
+          // do something with new state
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  render() {
+    if (this.state.isLoading) {
+      return (
+        <View style={{flex: 1, paddingTop: 20}}>
+          <ActivityIndicator />
+        </View>
+      );
     }
 
-    render () {
-        return (
-            <View style={{padding: 10}}>
-                <TextInput
-                    style={{height: 40}}
-                    placeholder="Type here to translate!"
-                    onChangeText={(text) => this.setState({text})}
-                />
-                <Text style={{padding: 10, fontSize: 42}}>
-                    {this.state.text.split(' ').map((word) => word && '🍕 and 💩').join(' ')}
-                </Text>
-            </View>
-        );
-    }
+    return (
+      <View style={{flex: 1, paddingTop: 20}}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <Text>{rowData.title}, {rowData.releaseYear}</Text>}
+        />
+      </View>
+    );
+  }
 }
+
+// export default class SectionListBasics extends Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <SectionList
+//           sections={[
+//             {title: 'D', data: ['Devin']},
+//             {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
+//           ]}
+//           renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
+//           renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+//         />
+//       </View>
+//     );
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//    flex: 1,
+//    paddingTop: 22,
+//   },
+//   item: {
+//     padding: 10,
+//     fontSize: 22,
+//     height: 44,
+//     backgroundColor: '#0075ff',
+//     color: '#f7ff55'
+//   },
+//   sectionHeader: {
+//       fontSize: 30
+//   }
+// })
+
+// export default class FlatListBasics extends Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <FlatList
+//           data={[
+//             {key: 'Devin'},
+//             {key: 'Jackson'},
+//             {key: 'James'},
+//             {key: 'Joel'},
+//             {key: 'John'},
+//             {key: 'Jillian'},
+//             {key: 'Jimmy'},
+//             {key: 'Julie'},
+//             {key: 'Devin1'},
+//             {key: 'Jackson1'},
+//             {key: 'James1'},
+//             {key: 'Joel1'},
+//             {key: 'John1'},
+//             {key: 'Jillian1'},
+//             {key: 'Jimmy1'},
+//             {key: 'Julie1'},
+//           ]}
+//           renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+//         />
+//       </View>
+//     );
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//    flex: 1,
+//    paddingTop: 22,
+//   },
+//   item: {
+//     padding: 10,
+//     fontSize: 22,
+//     height: 44,
+//     backgroundColor: '#0075ff',
+//     color: '#f7ff55'
+//   },
+// })
+
+// export default class IScrolledDownAndWhatHappenedNextShockedMe extends Component {
+//   render() {
+//       return (
+//         <ScrollView>
+//           <Text style={{fontSize:96}}>Scroll me plz</Text>
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Text style={{fontSize:96}}>If you like</Text>
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Text style={{fontSize:96}}>Scrolling down</Text>
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Text style={{fontSize:96}}>What's the best</Text>
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Text style={{fontSize:96}}>Framework around?</Text>
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Image source={require('./favicon.png')} />
+//           <Text style={{fontSize:80}}>React Native</Text>
+//         </ScrollView>
+//     );
+//   }
+// }
+
+// export default class ButtonBasics extends Component {
+//   _onPressButton() {
+//     Alert.alert('You tapped the button!')
+//   }
+//
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <View style={styles.buttonContainer}>
+//           <Button
+//             onPress={this._onPressButton}
+//             title="Press Me"
+//           />
+//         </View>
+//         <View style={styles.buttonContainer}>
+//           <Button
+//             onPress={this._onPressButton}
+//             title="Press Me"
+//             color="#841584"
+//           />
+//         </View>
+//         <View style={styles.alternativeLayoutButtonContainer}>
+//           <Button
+//             onPress={this._onPressButton}
+//             title="This looks great!"
+//           />
+//           <Button
+//             onPress={this._onPressButton}
+//             title="OK!"
+//             color="#841584"
+//           />
+//         </View>
+//       </View>
+//     );
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//    flex: 1,
+//    justifyContent: 'center',
+//   },
+//   buttonContainer: {
+//     margin: 20
+//   },
+//   alternativeLayoutButtonContainer: {
+//     margin: 20,
+//     flexDirection: 'row',
+//     justifyContent: 'space-between'
+//   }
+// })
+
+// export default class PizzaTranslator extends Component {
+//     constructor (props) {
+//         super(props);
+//         this.state = {text: ''}
+//     }
+//
+//     render () {
+//         return (
+//             <View style={{padding: 10}}>
+//                 <TextInput
+//                     style={{height: 40}}
+//                     placeholder="Type here to translate!"
+//                     onChangeText={(text) => this.setState({text})}
+//                 />
+//                 <Text style={{padding: 10, fontSize: 42}}>
+//                     {this.state.text.split(' ').map((word) => word && '🍕 and 💩').join(' ')}
+//                 </Text>
+//             </View>
+//         );
+//     }
+// }
 
 // export default class FlexDimensionsBasics extends Component {
 //   render() {
