@@ -20,7 +20,7 @@ const conn = mysql.createConnection({
 
 conn.connect(err => {
   if(err){
-    console.log("Error connecting to Db");
+    console.error("Error connecting to Db");
     return;
   }
   console.log("Connection established\n");
@@ -31,7 +31,7 @@ app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
 app.get('/todos', (req, res) => {
     conn.query('SELECT * FROM todos ORDER BY completed DESC', (err, rows) => {
         if (err) {
-            console.log('Error: ', err);
+            console.error('Error: ', err);
         } else {
             todos = rows;
         }
@@ -43,13 +43,13 @@ app.get('/todos/:id', (req, res) => {
     const todoID = req.params.id;
     conn.query('SELECT * FROM todos WHERE ID = ?', todoID, (err, rows) => {
         if (err) {
-            console.log('Error: ', err);
+            console.error('Error: ', err);
         } else {
             todos = rows;
             if (todos.length > 0) {
                 res.send(todos);
             } else {
-                res.send('No such todo')
+                res.send('No such todo');
             }
         }
     });
@@ -70,11 +70,11 @@ app.put('/update-todo', (req, res) => {
     const update = req.body.TodoID;
     conn.query('UPDATE todos SET completed = "1" WHERE id = ?'), update, (err, rows) => {
         if (err) {
-            console.log('Error: ', err);
+            console.error('Error: ', err);
         } else {
             res.send(todos);
         }
-    }
+    };
 });
 
 app.listen(3000, () => console.log('server is running'));
