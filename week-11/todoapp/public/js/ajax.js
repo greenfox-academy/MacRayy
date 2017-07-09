@@ -8,15 +8,14 @@ const createAjax = function () {
             newTodo: input
         };
         xhr.setRequestHeader('Content-Type', 'application/json');
-        // console.log(message);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
                     const rsp = JSON.parse(xhr.response);
                     callback(rsp);
-                    console.log(rsp);
+                    console.info(rsp);
                 } else {
-                    console.log('error:' + xhr.status);
+                    console.error('error:' + xhr.status);
                 }
             }
         }

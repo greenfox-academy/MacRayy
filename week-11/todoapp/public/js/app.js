@@ -13,7 +13,7 @@ const createController = function() {
                 console.log('clicked');
             });
         });
-    }
+    };
 
     const getTodos = () => {
         const endpoint = 'http://localhost:3000/todos';
@@ -26,7 +26,6 @@ const createController = function() {
     const postTodo = (input) => {
         const endpoint = 'http://localhost:3000/post-todo';
         ajax.ajax(endpoint, 'POST', () => {
-            console.log('hey');
             getTodos();
         }, input);
     };
@@ -38,7 +37,7 @@ const createController = function() {
 
     return {
         getTodos
-    }
+    };
 }
 
 const app = createController();
