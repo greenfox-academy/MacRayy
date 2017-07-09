@@ -16,14 +16,14 @@
 // Run them
 // Fix your code if needed
 
-let sum = function(numList) {
+const sum = function(numList) {
     this.numList = numList;
 
     this.sumArray = function() {
         let summa = 0;
         try {
             if (this.numList === []) {
-                return 0
+                return 0;
             } else if (this.numList === null || typeof this.numList === 'string') {
                 throw new Error('it is not a list');
             } else {
@@ -35,10 +35,7 @@ let sum = function(numList) {
         } catch (err) {
             return err.message;
         }
-    }
-}
-
-// let array = new sum(null);
-// console.log(array.sumArray());
+    };
+};
 
 module.exports = sum;
