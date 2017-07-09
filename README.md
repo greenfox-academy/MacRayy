@@ -1,5 +1,4 @@
 # MacRayy
-greenfox exercises
 
 [Zodiac Cohort syllabus](https://github.com/greenfox-academy/zodiac-syllabus)
 
@@ -11,7 +10,7 @@ The TODO app in python, [repo](https://github.com/greenfox-academy/macrayy_todo-
 Project work - Hotel Booking Admin Frontend: 
 Here you can visit the heroku [site](https://hotel-booking-admin-frontend.herokuapp.com) and here the [repo](https://github.com/greenfox-academy/hotel-booking-admin-frontend)
 
-Final exam links:
+# Final exam links:
 Event handling: [TODO app](https://github.com/greenfox-academy/MacRayy/blob/master/week-11/todoapp/public/js/app.js), and the project [HTML](https://github.com/greenfox-academy/hotel-booking-admin-frontend/blob/master/src/app/navbar/navbar.component.html) and [TS](https://github.com/greenfox-academy/hotel-booking-admin-frontend/blob/master/src/app/navbar/navbar.component.ts)
 
 Initiating an AJAX request: [TODO app](https://github.com/greenfox-academy/MacRayy/blob/master/week-11/todoapp/public/js/ajax.js), and the [project](https://github.com/greenfox-academy/hotel-booking-admin-frontend/blob/master/src/app/httprequest.service.ts)
