@@ -17,8 +17,8 @@ Initiating an AJAX request: [TODO app](https://github.com/greenfox-academy/MacRa
 
 Using callbacks: the previous example or [Reduce](https://github.com/greenfox-academy/MacRayy/blob/master/week-09/day-1/countletter.js)
 
-Creating an Express endpoint in Node.js: [TODO app] (https://github.com/greenfox-academy/MacRayy/blob/master/week-11/todoapp/server-todo.js)
+Creating an Express endpoint in Node.js: [TODO app](https://github.com/greenfox-academy/MacRayy/blob/master/week-11/todoapp/server-todo.js)
 
-Creating a database call in Node.js: [TODO app] (https://github.com/greenfox-academy/MacRayy/blob/master/week-11/todoapp/server-todo.js), 
+Creating a database call in Node.js: [TODO app](https://github.com/greenfox-academy/MacRayy/blob/master/week-11/todoapp/server-todo.js), 
 
 Unit test using a testing library: [test](https://github.com/greenfox-academy/MacRayy/blob/master/week-09/day-1/sum_test.js) and the [code](https://github.com/greenfox-academy/MacRayy/blob/master/week-09/day-1/sum.js)
