@@ -11,13 +11,13 @@ const originalArray = [
     'abc',
     'ijk',
     'xyz'
-]
+];
 
 const originalArray2 = [
     'xyz',
     'abc',
     'lmn'
-]
+];
 
 const stringMixer = (array) => {
     const newArray = [];
