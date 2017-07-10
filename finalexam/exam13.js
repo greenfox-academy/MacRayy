@@ -7,25 +7,32 @@
 //   "ckz"
 // ]
 
-const firstArray = [
-    "abc",
-    "ijk",
-    "xyz"
+const originalArray = [
+    'abc',
+    'ijk',
+    'xyz'
 ]
 
-const stringMixer = () => {
-    const secondArray = [];
+const originalArray2 = [
+    'xyz',
+    'abc',
+    'lmn'
+]
+
+const stringMixer = (array) => {
+    const newArray = [];
     let newString = '';
-    for (let i = 0; i < firstArray.length; i++) {
-        for (var j = 0; j < firstArray[i].length; j++) {
-            newString += firstArray[j][i];
+    for (let i = 0; i < array.length; i++) {
+        for (var j = 0; j < array[i].length; j++) {
+            newString += array[j][i];
             if (newString.length === 3) {
-                secondArray[i] = newString
+                newArray[newArray.length] = newString;
                 newString = '';
             }
         }
     }
-    return secondArray;
-}
+    return newArray;
+};
 
-console.log(stringMixer());
+console.log(stringMixer(originalArray));
+console.log(stringMixer(originalArray2));
